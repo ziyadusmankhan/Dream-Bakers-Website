@@ -1,0 +1,57 @@
+.fade-up{
+
+opacity:0;
+
+transform:translateY(40px);
+
+transition:.8s;
+
+}
+
+.fade-up.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+.zoom{
+
+overflow:hidden;
+
+}
+
+.zoom img{
+
+transition:.5s;
+
+}
+
+.zoom:hover img{
+
+transform:scale(1.08);
+
+}
+
+.float{
+
+animation:float 3s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%,100%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-10px);
+
+}
+
+}

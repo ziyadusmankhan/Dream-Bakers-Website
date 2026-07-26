@@ -1,0 +1,57 @@
+@import url("reset.css");
+
+@import url("variables.css");
+
+@import url("layout.css");
+
+@import url("components.css");
+
+@import url("animations.css");
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+
+font-family:var(--heading);
+
+line-height:1.2;
+
+}
+
+p{
+
+color:var(--text-light);
+
+}
+
+::selection{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:var(--primary);
+
+border-radius:999px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:var(--secondary-light);
+
+}

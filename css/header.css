@@ -1,0 +1,333 @@
+/* ===========================
+   HEADER
+=========================== */
+
+.header{
+
+    position: fixed;
+
+    top:0;
+    left:0;
+    width:100%;
+
+    z-index:999;
+
+    background:rgba(255,255,255,.85);
+
+    backdrop-filter:blur(14px);
+
+    transition:all .35s ease;
+
+}
+
+.header.scrolled{
+
+    padding:8px 0;
+
+    background:white;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.container{
+
+    width:90%;
+    max-width:1280px;
+    margin:auto;
+
+}
+
+.header-container{
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    height:90px;
+
+}
+
+/* ===========================
+LOGO
+=========================== */
+
+.logo{
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    text-decoration:none;
+
+}
+
+.logo img{
+
+   width:143px;
+
+  height:143px;
+
+  border-radius:50%;
+
+  box-shadow:0 10px 30px rgba(0,0,0,.15);;
+
+    object-fit:cover;
+
+}
+
+
+.logo-text h2 {
+    color: var(--primary);
+    font-size: 26px;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 700;
+    line-height: 1;
+}
+
+
+
+.logo-text span{
+
+    display:block;
+
+    margin-top:6px;
+
+    color:var(--dark);
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+
+    font-size:13px;
+
+}
+
+/* ===========================
+NAVIGATION
+=========================== */
+
+.nav-links{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:40px;
+
+}
+
+.nav-links a{
+
+    position:relative;
+
+    text-decoration:none;
+
+    color:#333;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover{
+
+    color:var(--primary);
+
+}
+
+.nav-links a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-8px;
+
+    width:0;
+
+    height:2px;
+
+    background:var(--primary);
+
+    transition:.3s;
+
+}
+
+.nav-links a:hover::after,
+
+.nav-links .active::after{
+
+    width:100%;
+
+}
+
+.nav-links .active{
+
+    color:var(--primary);
+
+}
+
+/* ===========================
+RIGHT SIDE
+=========================== */
+
+.header-right{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+/* ===========================
+ICON BUTTONS
+=========================== */
+
+.icon-btn{
+
+    position:relative;
+
+    width:92px;
+
+    height:92px;
+
+    border-radius:50%;
+
+    border:none;
+
+    background:#fff;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    transition:.3s;
+
+    text-decoration:none;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.icon-btn:hover{
+
+    transform:translateY(-4px);
+
+    background:var(--blush);
+
+}
+
+.icon-btn img {
+    width: 61px;
+    height: 62px;
+    object-fit: contain;
+}
+
+.cart-count{
+
+    position:absolute;
+
+    top:-5px;
+
+    right:-4px;
+
+    width:20px;
+
+    height:20px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:#fff;
+
+    font-size:11px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/* ===========================
+ORDER BUTTON
+=========================== */
+
+.btn-order{
+
+    padding:14px 28px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-weight:600;
+
+    background:linear-gradient(
+        135deg,
+        var(--primary-light),
+        var(--primary)
+    );
+
+    transition:.35s;
+
+    box-shadow:
+    0 12px 25px rgba(200,19,97,.35);
+
+}
+
+.btn-order:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 18px 35px rgba(200,19,97,.45);
+
+}
+
+/* ===========================
+MOBILE BUTTON
+=========================== */
+
+.mobile-menu-btn{
+    display:none;
+    width:46px;
+    height:46px;
+    border:none;
+    background:transparent;
+    border-radius:12px;
+    cursor:pointer;
+    overflow:hidden;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+    gap:5px;
+}
+
+.mobile-menu-btn span{
+    display:block;
+    width:22px;
+    height:2.5px;
+    background:#333;
+    border-radius:20px;
+    transition:.3s;
+}
+.mobile-menu-btn{
+    width:46px;
+    height:46px;
+    border-radius:12px;
+}

@@ -1,0 +1,213 @@
+/* ==========================================
+   FEATURED CAKES
+========================================== */
+
+.featured{
+    padding:100px 0;
+    background:#fff7fa;
+}
+
+.featured-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+}
+
+.cake-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    transition:.4s;
+
+    position:relative;
+
+}
+
+.cake-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 30px 60px rgba(214,51,132,.18);
+
+}
+
+.cake-card img{
+
+    width:100%;
+
+    height:280px;
+
+    object-fit:cover;
+
+    transition:.5s;
+
+}
+
+.cake-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.cake-content{
+
+    padding:30px;
+
+}
+
+.cake-content h3{
+
+    margin-bottom:12px;
+
+    font-size:1.5rem;
+
+    color:#2b1d1d;
+
+}
+
+.cake-content p{
+
+    color:#666;
+
+    line-height:1.7;
+
+    margin-bottom:25px;
+
+}
+
+.cake-bottom{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.price{
+
+    font-size:1.4rem;
+
+    font-weight:700;
+
+    color:#d63384;
+
+}
+
+.cake-btn{
+
+    background:#d63384;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:12px 26px;
+
+    border-radius:20px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.cake-btn:hover{
+
+    background:#b6266e;
+
+}
+
+.cake-badge{
+
+    position:absolute;
+
+    top:18px;
+
+    left:18px;
+
+    background:#d63384;
+
+    color:white;
+
+    padding:8px 16px;
+
+    border-radius:20px;
+
+    font-size:.8rem;
+
+    font-weight:600;
+
+    z-index:2;
+
+}
+
+.cake-badge.new{
+
+    background:#28a745;
+
+}
+
+.featured-btn{
+
+    text-align:center;
+
+    margin-top:60px;
+
+}
+
+.view-all-btn{
+
+    display:inline-block;
+
+    padding:16px 36px;
+
+    border-radius:20px;
+
+    background:#fff;
+
+    color:#d63384;
+
+    text-decoration:none;
+
+    font-weight:700;
+
+    border:2px solid #d63384;
+
+    transition:.3s;
+
+}
+
+.view-all-btn:hover{
+
+    background:#d63384;
+
+    color:white;
+
+}
+
+
+.product-image{
+
+    overflow:hidden;
+
+}
+
+.product-image img{
+
+    transition:.7s;
+
+}
+
+.product-card:hover img{
+
+    transform:scale(1.08);
+
+}

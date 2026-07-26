@@ -1,0 +1,794 @@
+/* =====================================================
+   DREAM BAKERS
+   Global Styles
+===================================================== */
+
+/* ===========================
+   GOOGLE FONT VARIABLES
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ===========================
+   ROOT VARIABLES
+=========================== */
+
+:root{
+
+    --primary:#c81361;
+    --primary-light:#ff4f9a;
+    --primary-dark:#a10f52;
+
+    --secondary:#fff9f2;
+
+    --white:#ffffff;
+
+    --dark:#2a1e1c;
+
+    --gray:#7d6b66;
+
+    --light-gray:#f5f5f5;
+
+    --gold:#f5a524;
+    --gold-light:#ffd68a;
+
+    --blush:#ffe4ef;
+
+    --border:#ffe4ef;
+
+    --radius:18px;
+
+    --transition:.35s cubic-bezier(.4,0,.2,1);
+
+    --shadow:
+    0 15px 40px rgba(42,30,28,.08);
+
+}
+
+/* ===========================
+   RESET
+=========================== */
+
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Outfit',sans-serif;
+
+    color:var(--dark);
+
+    background:#fff;
+
+    line-height:1.7;
+    
+}
+
+img{
+
+    max-width:100%;
+
+    height:auto;
+
+    display:block;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+.container{
+
+    width:90%;
+
+    max-width:1300px;
+
+    margin:auto;
+
+}
+
+section{
+
+    padding:100px 0;
+
+}
+
+h1,h2,h3,h4{
+
+    font-family:'Fraunces',serif;
+
+    font-weight:600;
+
+}
+
+::selection{
+
+    background:var(--primary);
+
+    color:#fff;
+
+}
+
+.section-title{
+
+font-size:clamp(2rem,5vw,3.5rem);
+
+margin-bottom:20px;
+
+}
+
+.section-subtitle{
+
+max-width:700px;
+
+color:var(--gray);
+
+font-size:18px;
+
+}
+.section-header{
+
+    text-align:center;
+
+    max-width:750px;
+
+    margin:0 auto 70px;
+
+}
+
+.section-header span{
+
+    color:var(--primary);
+
+    font-weight:600;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    font-size:14px;
+
+}
+
+.section-header h2{
+
+    font-size:46px;
+
+    margin:15px 0;
+
+}
+
+.section-header p{
+
+    color:var(--gray);
+
+    font-size:18px;
+
+}
+
+/* =========================
+   Buttons
+========================= */
+
+.btn{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:15px 34px;
+
+border-radius:50px;
+
+font-weight:700;
+
+transition:var(--transition);
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+.btn-primary,
+.btn-order{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:10px;
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+
+    background:linear-gradient(
+    135deg,
+    var(--primary-light),
+    var(--primary));
+
+    color:white;
+
+    box-shadow:
+
+    0 12px 30px rgba(200,19,97,.25);
+
+}
+
+.btn-primary:hover,
+.btn-order:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 20px 45px rgba(200,19,97,.35);
+
+}
+.btn-outline{
+
+border:2px solid var(--primary);
+
+color:var(--primary);
+
+}
+
+.btn-outline:hover{
+
+background:var(--primary);
+
+color:white;
+
+}
+
+/* =========================
+   Utilities
+========================= */
+
+.text-center{
+
+text-align:center;
+
+}
+
+.hidden{
+
+display:none;
+
+}
+
+.grid{
+
+display:grid;
+
+gap:30px;
+
+}
+
+.rounded{
+
+border-radius:var(--radius);
+
+}
+
+.shadow{
+
+box-shadow:var(--shadow);
+
+}
+/* TESTIMONALS */
+/*==========================
+    TESTIMONIALS and customer revviews
+==========================*/
+
+.testimonials{
+
+    padding:100px 0;
+    background:#fff;
+
+}
+
+.testimonial-slider{
+
+    display:flex;
+    gap:30px;
+    margin-top:60px;
+    justify-content:center;
+    flex-wrap:wrap;
+
+}
+
+.testimonial-card{
+
+    width:477px;
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+
+    transform:translateY(-10px);
+
+}
+
+.testimonial-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.stars{
+
+    font-size:22px;
+
+    color:#ffb400;
+
+    margin-bottom:18px;
+
+}
+
+.review {
+    color: var(--gray);
+    line-height: 1.8;
+    margin-bottom: 11px;
+    font-size: 1rem;
+}
+
+.customer{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+}
+
+.customer img{
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+}
+
+.customer h4{
+
+    margin-bottom:4px;
+
+    color:var(--dark);
+
+}
+
+.customer span{
+
+    color:var(--gray);
+
+    font-size:14px;
+
+}
+
+.testimonial-dots{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:12px;
+
+    margin-top:45px;
+
+}
+
+.dot{
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:#ddd;
+
+    cursor:pointer;
+
+}
+
+.dot.active{
+
+    background:var(--primary);
+
+}
+
+
+/*=========================
+BEST SELLERS
+==========================*/
+
+/* .best-sellers{
+
+    padding:100px 0;
+    background:#fff;
+
+}
+
+.section-title{
+
+    text-align:center;
+    margin-bottom:60px;
+
+}
+
+.section-title span{
+
+    color:#d9778a;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+
+}
+
+.section-title h2{
+
+    font-size:42px;
+    margin:15px 0;
+
+}
+
+.section-title p{
+
+    max-width:700px;
+    margin:auto;
+    color:#666;
+    line-height:1.8;
+
+}
+
+.products-grid{
+
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:35px;
+
+}
+
+.product-card{
+
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    transition:.35s;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.product-image{
+
+    position:relative;
+    height:260px;
+    overflow:hidden;
+
+}
+
+.product-image img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.5s;
+
+}
+
+.product-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.badge{
+
+    position:absolute;
+    top:20px;
+    left:20px;
+
+    background:#ff6b81;
+    color:white;
+
+    padding:8px 18px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+
+}
+
+.product-content{
+
+    padding:30px;
+
+}
+
+.product-content h3{
+
+    font-size:24px;
+    margin-bottom:15px;
+
+}
+
+.product-content p{
+
+    color:#666;
+    line-height:1.7;
+    margin-bottom:25px;
+
+}
+
+.price-row{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+.price{
+
+    font-size:24px;
+    font-weight:700;
+    color:#d9778a;
+
+}
+
+.btn-small{
+
+    background:#d9778a;
+    color:white;
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:40px;
+    transition:.3s;
+
+}
+
+.btn-small:hover{
+
+    background:#b85e72;
+
+}
+
+.center-btn{
+
+    margin-top:60px;
+    text-align:center; */
+
+/* } */
+
+
+
+/*==================================
+WHY CHOOSE US
+==================================*/
+
+.why-us{
+
+    padding:100px 0;
+
+    background:var(--secondary);
+
+}
+
+.why-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+.why-card{
+
+    background:#fff;
+
+    border-radius:20px;
+
+    padding:40px 30px;
+
+    text-align:center;
+
+    transition: all .35s cubic-bezier(.4,0,.2,1);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.why-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.why-icon{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+
+}
+
+.why-card h3{
+
+    margin-bottom:15px;
+
+    font-size:24px;
+
+}
+
+.why-card p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+}
+html{
+
+scroll-behavior:smooth;
+
+}
+
+/* ===========================
+   SCROLLBAR
+=========================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#fafafa;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary-dark);
+
+}
+.card{
+
+    background:white;
+
+    border-radius:22px;
+
+    box-shadow:var(--shadow);
+
+    overflow:hidden;
+
+    transition:var(--transition);
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/* ===========================
+   Reveal Animation
+=========================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(50px);
+
+    transition:all .8s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+button,
+a,
+.card,
+.product-card{
+
+    transition:all .35s ease;
+
+}
+
+.product-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.product-card img{
+
+    transition:.6s;
+
+}
+
+.product-card:hover img{
+
+    transform:scale(1.08);
+
+}
+.section-tag h2{
+    font-size: 2rem;
+
+}
+
+.section-title h2{
+    font-size: 2.2rem;
+}
+
+.section-title p{
+    font-size: 1.1rem;
+}

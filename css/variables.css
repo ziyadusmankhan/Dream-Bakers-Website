@@ -1,0 +1,66 @@
+:root{
+
+/* Colors */
+
+--primary:#C4728A;
+--primary-dark:#9C4E68;
+
+--secondary:#F3C9D6;
+--secondary-light:#FBE7ED;
+
+--background:#FFFBF6;
+--surface:#FFFFFF;
+
+--text:#3B2A2C;
+--text-light:#6B5457;
+
+--border:#EDE8E5;
+
+--gold:#C9A063;
+
+--success:#16A34A;
+--warning:#F59E0B;
+--danger:#DC2626;
+
+
+/* Fonts */
+
+--heading:"Fraunces",serif;
+--body:"Manrope",sans-serif;
+
+
+/* Radius */
+
+--radius-sm:8px;
+--radius-md:16px;
+--radius-lg:24px;
+--radius-xl:32px;
+--radius-round:999px;
+
+
+/* Shadows */
+
+--shadow-sm:0 2px 8px rgba(0,0,0,.08);
+
+--shadow-md:0 10px 25px rgba(0,0,0,.12);
+
+--shadow-lg:0 20px 40px rgba(0,0,0,.18);
+
+--shadow-xl:0 30px 60px rgba(0,0,0,.25);
+
+
+/* Width */
+
+--container:1280px;
+
+
+/* Transition */
+
+--transition:.3s ease;
+
+
+/* Header */
+
+--header-height:80px;
+
+}

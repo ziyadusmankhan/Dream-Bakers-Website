@@ -1,0 +1,112 @@
+/* ==========================================
+   WHY CHOOSE US
+========================================== */
+
+.features{
+    padding:35px 0;
+    background:#fff;
+}
+
+.section-heading{
+    text-align:center;
+    max-width:700px;
+    margin:0 auto 70px;
+}
+
+.section-tag{
+    display:inline-block;
+    padding:10px 22px;
+    background:#fff1f5;
+    color:#d63384;
+    border-radius:50px;
+    font-size:4.9rem;
+    font-weight:600;
+    margin-bottom:20px;
+}
+.section-title h1{
+    font-size: 3rem;
+}
+.section-heading h2{
+    font-size:2.8rem;
+    color:#2b1d1d;
+    margin-bottom:20px;
+    line-height:1.2;
+}
+
+.section-heading h2 span{
+    color:#d63384;
+}
+
+.section-heading p{
+    color:#666;
+    font-size:1.05rem;
+    line-height:1.8;
+}
+
+.features-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+    max-width:1100px;
+    margin:0 auto;
+}
+
+.feature-card {
+    background: #fff;
+    
+    border-radius: 24px;
+    text-align: center;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, .06);
+    transition: .35s;
+    border: 1px solid #f4f4f4;
+    position: relative;
+    overflow: hidden;
+}
+.feature-card{
+    min-height:260px;
+    padding:30px 24px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.feature-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 25px 55px rgba(214,51,132,.15);
+
+}
+
+.feature-icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: #fff1f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 27px;
+}
+
+.feature-card h3{
+
+    margin-bottom:15px;
+
+    color:#2b1d1d;
+
+    font-size:1.3rem;
+
+}
+
+.feature-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    font-size:.96rem;
+
+}

@@ -1,0 +1,152 @@
+@media (max-width:768px){
+
+.hero{
+   padding:95px 0 50 px;
+
+}
+
+.hero-container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    text-align:center;
+
+    gap:50px;
+
+}
+
+.hero-content{
+    text-align:center;
+
+    order:2;
+
+}
+
+.hero-image{
+    margin-bottom:15px;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.hero-content h1{
+
+    font-size:38px;
+
+    line-height:1.15;
+
+}
+
+.hero-content p{
+
+    max-width:320px;
+
+    margin:auto;
+
+    font-size:16px;
+}
+
+.hero-tag{
+
+    font-size:14px;
+
+}
+.mobile-menu-btn{
+    display:flex;
+}
+.hero-buttons{
+
+display:flex;
+
+flex-direction:column;
+
+gap:14px;
+
+align-items:center;
+justify-content:center;
+
+}
+
+.hero-buttons a{
+
+width:100%;
+
+max-width:280px;
+
+}
+.floating{
+
+display:none;
+
+}
+
+.btn-primary,
+.btn-secondary{
+
+    width:100%;
+
+    max-width:320px;
+
+}
+.hero-image img{
+
+    width:90%;
+
+    max-width:320px;
+
+    border-radius:22px;
+
+}
+
+.floating-card{
+
+    display:none;
+
+}
+
+.offer-badge{
+
+    display:none;
+
+}
+.trust-badges{
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:12px;
+
+}
+/* =========================
+   Hero Stats Mobile
+========================= */
+
+.stats-container{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:14px;
+    margin-top:40px;
+}
+
+.stat-box{
+    padding:22px 15px;
+    border-radius:18px;
+    min-height:95px;
+}
+
+.stat-box h2{
+    font-size:2rem;
+    margin-bottom:8px;
+}
+
+
+.stat-box p{
+    font-size:.9rem;
+}}

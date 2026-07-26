@@ -1,0 +1,59 @@
+body{
+
+    background:var(--background);
+
+    color:var(--text);
+
+    font-family:var(--body);
+
+}
+
+.container{
+
+    width:min(92%,var(--container));
+
+    margin:auto;
+
+}
+
+.section{
+
+    padding:80px 0;
+
+}
+
+.grid{
+
+    display:grid;
+
+    gap:30px;
+
+}
+
+.flex{
+
+    display:flex;
+
+}
+
+.flex-between{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+}
+
+.text-center{
+
+    text-align:center;
+
+}
+
+.hidden{
+
+    display:none;
+
+}

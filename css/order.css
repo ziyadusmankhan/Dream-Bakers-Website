@@ -1,0 +1,1184 @@
+/*=========================================
+        ORDER PAGE
+=========================================*/
+
+.order-page{
+
+    padding:140px 0 100px;
+
+    background:var(--secondary);
+
+}
+
+.order-wrapper{
+
+    display:grid;
+
+    grid-template-columns:2fr 1fr;
+
+    gap:40px;
+
+    align-items:start;
+
+}
+
+.order-form{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:40px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.order-summary{
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+.summary-card{
+
+    background:#fff;
+
+    border-radius:24px;
+
+    padding:30px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+}
+
+.summary-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:18px;
+
+}
+
+.summary-row span{
+
+    color:var(--gray);
+
+}
+
+.summary-row strong{
+
+    color:var(--dark);
+
+}
+
+.summary-note{
+
+    margin:25px 0;
+
+}
+
+.summary-note h4{
+
+    color:var(--primary);
+
+    margin-bottom:12px;
+
+}
+
+.summary-note p{
+
+    color:var(--gray);
+
+    line-height:1.7;
+
+    margin-bottom:10px;
+
+}
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
+
+    margin-bottom:28px;
+
+}
+
+.form-group label{
+
+    font-weight:600;
+
+    margin-bottom:10px;
+
+    color:var(--dark);
+
+}
+
+.form-group input,
+
+.form-group select,
+
+.form-group textarea{
+
+    width:100%;
+
+    padding:16px;
+
+    border:1px solid var(--blush);
+
+    border-radius:14px;
+
+    font-size:16px;
+
+    transition:.3s;
+
+    background:#fff;
+
+}
+
+.form-group input:focus,
+
+.form-group select:focus,
+
+.form-group textarea:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:0 0 0 4px rgba(200,19,97,.12);
+
+}
+
+/*=========================================
+        WEIGHT CARDS
+=========================================*/
+
+.weight-options{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+.weight-card{
+
+    position:relative;
+
+    cursor:pointer;
+
+}
+.weight-card input{
+
+    display:none;
+
+}
+.weight-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:10px;
+
+    padding:22px;
+
+    border-radius:20px;
+
+    border:2px solid var(--blush);
+
+    background:white;
+
+    transition:.3s;
+
+}
+.weight-icon{
+
+    font-size:2rem;
+
+}
+.weight-content strong{
+
+    font-size:1.1rem;
+
+    color:var(--dark);
+
+}
+
+.weight-content small{
+
+    color:var(--gray);
+
+    line-height:1.5;
+
+}
+.weight-card:hover .weight-content{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+    0 15px 35px
+
+    rgba(200,19,97,.15);
+
+}
+.weight-card input:checked + .weight-content{
+
+    background:var(--blush);
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+    0 15px 40px
+
+    rgba(200,19,97,.18);
+
+}
+.weight-content{
+
+    transition:
+
+        .3s,
+
+        transform .25s;
+
+}
+
+.weight-options label{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:var(--secondary);
+
+    border:1px solid var(--blush);
+
+    padding:16px;
+
+    border-radius:14px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.weight-options label:hover{
+
+    background:var(--blush);
+
+}
+
+textarea{
+
+    resize:vertical;
+
+    min-height:130px;
+
+}
+.hidden{
+
+    display:none;
+
+}
+
+.image-preview{
+
+    width:100%;
+
+    max-width:320px;
+
+    margin-top:15px;
+
+    border-radius:16px;
+
+    display:none;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.12);
+
+}
+
+/*=========================================
+        FORM VALIDATION
+=========================================*/
+
+.input-error{
+
+    border:2px solid #e53935 !important;
+
+    box-shadow:0 0 0 4px rgba(229,57,53,.12);
+
+}
+
+.error-message{
+
+    color:#e53935;
+
+    font-size:.85rem;
+
+    margin-top:8px;
+
+}
+
+.input-success{
+
+    border:2px solid #28a745 !important;
+
+}
+.loading{
+
+    opacity:.7;
+
+    pointer-events:none;
+
+}
+
+/*=========================================
+        PAGE
+=========================================*/
+
+.order-page{
+
+    padding:80px 0;
+
+    background:
+
+    linear-gradient(
+
+        180deg,
+
+        var(--secondary),
+
+        #ffffff
+
+    );
+
+}
+
+.order-header{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.order-tag{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    font-size:.85rem;
+
+    padding:12px 26px;
+
+    border-radius:999px;
+
+    background:linear-gradient(90deg, var(--blush), var(--gold-light));
+
+    color:var(--primary);
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+    box-shadow:0 12px 28px rgba(200,19,97,.18);
+
+}
+
+.order-header h1{
+
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size:3.6rem;
+
+    color:var(--dark);
+
+    margin-bottom:20px;
+
+}
+
+.order-header p {
+    max-width: 700px;
+    margin: auto;
+    color: var(--gray);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+/*=========================================
+        LAYOUT
+=========================================*/
+
+.order-layout{
+
+    display:grid;
+
+    grid-template-columns:
+
+        2fr
+
+        1fr;
+
+    gap:40px;
+
+    align-items:start;
+
+}
+.order-form,
+
+.order-summary{
+
+    background:white;
+
+    border-radius:30px;
+
+    padding:0px;
+
+    box-shadow:
+
+    0 20px 60px
+
+    rgba(200,19,97,.08);
+
+}
+.order-summary{
+
+    position:sticky;
+
+    top:120px;
+
+}
+
+/*=========================================
+        FORM CARDS
+=========================================*/
+
+.form-card{
+
+    background:#fff;
+
+    border-radius:22px;
+
+    padding:24px;
+
+    margin-bottom:20px;
+
+    border:1px solid var(--blush);
+
+    box-shadow:
+    0 10px 30px rgba(200,19,97,.06);
+
+    transition:.35s;
+
+}
+
+.form-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 25px 60px rgba(200,19,97,.12);
+
+}
+
+/*=========================================
+        CARD HEADER
+=========================================*/
+
+.card-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    margin-bottom:18px;
+
+}
+
+.card-icon{
+
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary-light), var(--primary));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    flex-shrink: 0;
+
+}
+
+.card-header h2{
+
+    font-size:1.45rem;
+
+    color:var(--dark);
+
+    margin-bottom:5px;
+
+}
+
+.card-header p{
+
+    color:var(--gray);
+
+    font-size:.95rem;
+
+}
+.form-group{
+
+    margin-bottom:18px;
+
+}
+
+.form-group label{
+
+    display:block;
+
+    margin-bottom:10px;
+
+    font-weight:600;
+
+    color:var(--dark);
+
+}
+.order-form input,
+.order-form select,
+.order-form textarea{
+
+    width:100%;
+
+    padding:16px 18px;
+
+    border:2px solid var(--blush);
+
+    border-radius:14px;
+
+    background:white;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus{
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+    0 0 0 4px
+
+    rgba(200,19,97,.12);
+
+    outline:none;
+
+}
+/*=========================================
+        DELIVERY CARDS
+=========================================*/
+
+.delivery-options{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+.delivery-card input{
+
+    display:none;
+
+}
+.delivery-card{
+
+    cursor:pointer;
+
+}
+
+.delivery-content{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:10px;
+
+    padding:24px;
+
+    background:white;
+
+    border:2px solid var(--blush);
+
+    border-radius:20px;
+
+    transition:.3s;
+
+}
+.delivery-icon{
+
+    font-size:2rem;
+
+}
+.delivery-content strong{
+
+    font-size:1.1rem;
+
+    color:var(--dark);
+
+}
+
+.delivery-content small{
+
+    color:var(--gray);
+
+    line-height:1.5;
+
+}
+.delivery-card:hover .delivery-content{
+
+    transform:translateY(-5px);
+
+    box-shadow:
+
+        0 15px 35px rgba(200,19,97,.15);
+
+}
+
+.delivery-card input:checked + .delivery-content{
+
+    background:var(--blush);
+
+    border-color:var(--primary);
+
+    box-shadow:
+
+        0 15px 40px rgba(200,19,97,.18);
+
+}
+.delivery-content{
+
+    position:relative;
+
+}
+.delivery-content::after{
+
+    content:"✓";
+
+    position:absolute;
+
+    top:12px;
+
+    right:12px;
+
+    width:24px;
+
+    height:24px;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:.8rem;
+
+    opacity:0;
+
+    transform:scale(.5);
+
+    transition:.25s;
+
+}
+.delivery-card input:checked + .delivery-content::after{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+.order-page nav img{
+    width: 231px;
+    height: 165px;
+    margin-bottom: 1px;
+    margin-top: -55px;
+}
+
+/*=========================================
+        IMAGE UPLOAD
+=========================================*/
+
+.upload-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    gap:12px;
+
+    border:3px dashed var(--blush);
+
+    border-radius:24px;
+
+    padding:50px 20px;
+
+    cursor:pointer;
+
+    background:var(--secondary);
+
+    transition:.3s;
+
+}
+
+.upload-box:hover{
+
+    border-color:var(--primary);
+
+    background:var(--blush);
+
+    transform:translateY(-3px);
+
+}
+.upload-icon{
+
+    font-size:3rem;
+
+}
+.upload-box h3{
+
+    color:var(--dark);
+
+    font-size:1.3rem;
+
+}
+
+.upload-box p{
+
+    color:var(--gray);
+
+}
+
+.upload-box small{
+
+    color:var(--gray);
+
+}
+.preview-wrapper{
+
+    margin-top:25px;
+
+    text-align:center;
+
+}
+#imagePreview{
+
+    display:none;
+
+    width:100%;
+
+    max-width:320px;
+
+    margin:auto;
+
+    border-radius:18px;
+
+    box-shadow:
+
+        0 15px 35px rgba(0,0,0,.12);
+
+}
+.remove-image{
+
+    display:none;
+
+    margin-top:18px;
+
+    background:var(--primary);
+
+    color:white;
+
+    border:none;
+
+    padding:12px 22px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.remove-image:hover{
+
+    background:var(--primary-dark);
+
+}
+
+/*=========================================
+        ORDER SUMMARY
+=========================================*/
+
+.summary-card{
+
+    position:sticky;
+
+    top:120px;
+
+    background:white;
+
+    border-radius:28px;
+
+    padding:30px;
+
+    box-shadow:
+
+        0 20px 60px rgba(200,19,97,.10);
+
+    border:1px solid var(--blush);
+
+}
+.summary-header{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    margin-bottom:30px;
+
+}
+
+.summary-icon{
+
+    width:60px;
+
+    height:60px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        var(--primary-light),
+        var(--primary)
+    );
+
+    color:white;
+
+    font-size:1.5rem;
+
+}
+
+.summary-header h2{
+
+    color:var(--dark);
+
+    margin-bottom:5px;
+
+}
+
+.summary-header p{
+
+    color:var(--gray);
+
+}
+.summary-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+
+    margin-bottom:28px;
+
+}
+
+.summary-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:14px 18px;
+
+    border-radius:14px;
+
+    background:var(--secondary);
+
+}
+
+.summary-item span{
+
+    color:var(--gray);
+
+}
+
+.summary-item strong{
+
+    color:var(--primary);
+
+}
+.pricing-box{
+
+    margin:30px 0;
+
+    padding:22px;
+
+    background:var(--blush);
+
+    border-radius:18px;
+
+    border:1px solid var(--blush);
+
+}
+
+.pricing-box h3{
+
+    margin-bottom:18px;
+
+}
+
+.pricing-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-bottom:12px;
+
+    font-weight:600;
+
+}
+
+.pricing-note{
+
+    font-size:.9rem;
+
+    color:var(--gray);
+
+    line-height:1.6;
+
+}
+.summary-whatsapp{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:50px;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:1.05rem;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+.summary-whatsapp:hover{
+
+    background:#1faa56;
+
+    transform:translateY(-3px);
+
+}
+.summary-item strong{
+
+    transition:.3s;
+
+}
+
+.summary-item strong.updated{
+
+    color:var(--primary-light);
+
+    transform:scale(1.08);
+
+}
+/*=========================================
+        SUMMARY NOTES
+=========================================*/
+
+.summary-notes{
+
+    margin:28px 0;
+
+    padding:22px;
+
+    background:var(--secondary);
+
+    border:1px solid var(--blush);
+
+    border-radius:18px;
+
+}
+.summary-notes h3{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:14px;
+
+    color:var(--dark);
+
+    font-size:1rem;
+
+}
+.summary-notes p{
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    font-size:.95rem;
+
+    white-space:pre-wrap;
+
+    word-break:break-word;
+
+}
+.summary-notes{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+.summary-notes::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:0;
+
+    width:5px;
+
+    height:100%;
+
+    background:var(--primary);
+
+}
+
+
+ /*=============================
+      REMOVE IMAGE BUTTON
+=============================*/
+
+.remove-image-btn{
+
+    display:block;
+
+    margin:18px auto 0;
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:#fff;
+
+    color:var(--primary);
+
+    border:2px solid var(--blush);
+
+    cursor:pointer;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.remove-image-btn:hover{
+
+    background:var(--primary);
+
+    color:#fff;
+
+    transform:translateY(-2px);
+
+}
+
+/*=========================================
+        HIDE HEADER ORDER BUTTON
+        (already on the order page)
+=========================================*/
+
+.page-order .btn-order{
+
+    display:none;
+
+}

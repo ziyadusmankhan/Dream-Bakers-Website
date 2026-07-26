@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catalog | Dream Bakers</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Desktop CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/catalog.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="icon" type="image/png" sizes="32x32"
+    href="assets/logo/Make_image_clear_upscale_2K_202607261051.jpeg">
+
+    <link rel="icon" type="image/png" sizes="16x16"
+    href="assets/logo/Make_image_clear_upscale_2K_202607261051.jpeg">
+
+    <link rel="apple-touch-icon"
+    href="assets/logo/Make_image_clear_upscale_2K_202607261051.jpeg">
+    
+
+    <!-- Mobile CSS -->
+    <link rel="stylesheet" href="responsive/header-mobile.css">
+    <link rel="stylesheet" href="responsive/catalog-mobile.css">
+
+</head>
+
+<body>
+
+    <!-- Header -->
+    <div id="header"></div>
+    
+
+    <main>
+
+        <!-- ==========================================
+             Catalog Hero
+        ========================================== -->
+
+        <section class="catalog-hero">
+
+            <div class="container">
+
+                <div class="breadcrumb">
+
+                    <a href="index.html">Home</a>
+
+                    <span>›</span>
+
+                    <span>GALLERY</span>
+
+                </div>
+
+                <div class="catalog-hero-content">
+
+                    <span class="section-tag">
+
+                        Freshly Baked Every Day
+
+                    </span>
+
+                    <h1>
+
+                        Explore Our Delicious Cake Collection
+
+                    </h1>
+
+                    <p>
+
+                        Discover handcrafted homemade cakes made with premium
+                        ingredients for birthdays, weddings, anniversaries,
+                        baby showers and every special occasion.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Search & Filters (Next) -->
+         <!-- ==========================================
+     Search & Filter
+========================================== -->
+
+<section class="catalog-controls">
+
+    <div class="container">
+
+        <div class="controls-wrapper">
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <span class="search-icon">🔍</span>
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search cakes, cupcakes, pastries..."
+                >
+
+            </div>
+
+            <!-- Categories -->
+
+            <div class="category-filters">
+
+                <button class="filter-btn active" data-category="all">
+                    All
+                </button>
+
+                <button class="filter-btn" data-category="birthday">
+                    Birthday
+                </button>
+
+                <button class="filter-btn" data-category="wedding">
+                    Wedding
+                </button>
+
+                <button class="filter-btn" data-category="anniversary">
+                    Anniversary
+                </button>
+
+                <button class="filter-btn" data-category="cupcakes">
+                    Cupcakes
+                </button>
+
+                <button class="filter-btn" data-category="pastries">
+                    Pastries
+                </button>
+
+                <button class="filter-btn" data-category="cookies">
+                    Cookies
+                </button>
+
+                <button class="filter-btn" data-category="custom">
+                    Custom Cakes
+                </button>
+
+            </div>
+
+            <!-- Bottom Row -->
+
+            <div class="catalog-toolbar">
+
+                <div class="product-count">
+
+                    Showing <strong id="productCount">0</strong> Cakes
+
+                </div>
+
+                <div class="sort-box">
+
+                    <label for="sortSelect">
+
+                        Sort By
+
+                    </label>
+
+                    <select id="sortSelect">
+
+                        <option value="popular">
+                            Most Popular
+                        </option>
+
+                        <option value="newest">
+                            Newest
+                        </option>
+
+                        <option value="low">
+                            Price: Low to High
+                        </option>
+
+                        <option value="high">
+                            Price: High to Low
+                        </option>
+                        <option value="name">
+                            Name (A–Z)
+                        </option>
+                        
+                        
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+        <!-- Product Grid (Next) -->
+         <!-- ==========================================
+     Product Catalog
+========================================== -->
+
+<section class="catalog-products">
+
+    <div class="container">
+
+        <div class="products-grid" id="productsGrid">
+          
+        </div>
+
+    </div>
+
+</section>
+
+        <!-- CTA (Later) -->
+
+    </main>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+   
+<script src="js/loader.js"></script>
+<script src="js/main.js"></script>
+
+<script src="js/products.js"></script>
+
+<script src="js/render.js"></script>
+
+<script src="js/catalog.js"></script>
+
+<script src="js/wishlist.js"></script>
+
+<!-- <script src="js/modal.js"></script> -->
+<script src="js/app.js"></script>
+</body>
+
+</html>

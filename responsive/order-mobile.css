@@ -1,0 +1,234 @@
+/*=========================================
+        RESPONSIVE DESIGN
+=========================================*/
+
+/* ---------- Tablet & below (≤992px) ---------- */
+@media (max-width: 992px){
+
+    .order-layout{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .order-summary{
+        order:99;
+        margin-top:30px;
+        position:static;
+        top:auto;
+    }
+
+    .summary-card{
+        position:static;
+    }
+
+}
+
+/* ---------- Phones (≤768px) ---------- */
+@media (max-width: 768px){
+
+    .order-page{
+        padding:100px 0 60px;
+    }
+
+    .container{
+        padding:0 18px;
+    }
+
+    .order-page nav img{
+        width: 104px;
+        height: 80px;
+        border-radius: 50px;
+    }
+
+    /* Header */
+    .order-header{
+        margin-bottom:40px;
+    }
+
+    .order-tag{
+        font-size:.85rem;
+        padding:8px 18px;
+    }
+
+    .order-header h1{
+        font-size:2.3rem;
+        margin-bottom:14px;
+    }
+
+    .order-header p{
+        font-size:1rem;
+        max-width:320px;
+        margin:12px auto 0;
+    }
+
+    /* Form cards */
+    .order-form,
+    .order-summary{
+        padding:22px;
+        border-radius:22px;
+    }
+
+    .form-card{
+        padding:24px;
+        border-radius:20px;
+        margin-bottom:20px;
+    }
+
+    .card-header{
+        gap:12px;
+    }
+
+    .card-icon{
+        width:56px;
+        height:56px;
+        font-size:1.6rem;
+        border-radius:14px;
+    }
+
+    .card-header h2{
+        font-size:1.2rem;
+    }
+
+    .card-header p{
+        font-size:.85rem;
+    }
+
+    .form-group{
+        margin-bottom:18px;
+    }
+
+    .order-form input,
+    .order-form select,
+    .order-form textarea{
+        padding:14px;
+        font-size:16px; /* prevents iOS auto-zoom on focus */
+    }
+
+    /* Weight & delivery option cards stack on mobile */
+    .weight-options,
+    .delivery-options{
+        grid-template-columns:1fr;
+        gap:14px;
+    }
+
+    .weight-card,
+    .delivery-card{
+        min-height:auto;
+    }
+
+    .weight-content,
+    .delivery-content{
+        flex-direction:row;
+        justify-content:flex-start;
+        text-align:left;
+        padding:16px 18px;
+    }
+
+    .weight-icon,
+    .delivery-icon{
+        font-size:1.6rem;
+    }
+
+    /* Image upload */
+    .upload-box{
+        padding:32px 18px;
+        border-radius:20px;
+    }
+
+    .upload-icon{
+        font-size:2.4rem;
+    }
+
+    #imagePreview{
+        max-width:100%;
+    }
+
+    /* Order summary */
+    .summary-header{
+        gap:12px;
+        margin-bottom:22px;
+    }
+
+    .summary-icon{
+        width:48px;
+        height:48px;
+        font-size:1.2rem;
+        border-radius:14px;
+    }
+
+    .summary-item{
+        flex-direction:row;
+        align-items:center;
+        padding:12px 14px;
+    }
+
+    .pricing-box{
+        padding:18px;
+        margin:22px 0;
+    }
+
+    .summary-whatsapp{
+        width:100%;
+        padding:16px;
+        font-size:1rem;
+    }
+}
+
+/* ---------- Small phones (≤480px) ---------- */
+@media (max-width: 480px){
+
+    .order-header h1{
+        font-size:1.9rem;
+    }
+
+    .order-tag{
+        font-size:.75rem;
+        padding:7px 14px;
+    }
+
+    .order-form,
+    .form-card,
+    .order-summary{
+        padding:18px;
+        border-radius:18px;
+    }
+
+    .card-header{
+        flex-wrap:wrap;
+    }
+
+    .card-icon{
+        width:48px;
+        height:48px;
+        font-size:1.4rem;
+    }
+
+    .weight-content,
+    .delivery-content{
+        padding:14px;
+        gap:6px;
+    }
+
+    .weight-content strong,
+    .delivery-content strong{
+        font-size:1rem;
+    }
+
+    .weight-content small,
+    .delivery-content small{
+        font-size:.82rem;
+    }
+
+    .summary-item{
+        padding:10px 12px;
+        font-size:.9rem;
+    }
+
+    .toast{
+        top:16px;
+        right:16px;
+        left:16px;
+        min-width:auto;
+        width:calc(100% - 32px);
+    }
+}
