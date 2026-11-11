@@ -1,43 +1,12 @@
-Dream-Bakers/
-│
-├── index.html
-├── about.html
-├── catalog.html
-├── gallery.html
-├── order.html
-├── contact.html
-├── faq.html
-│
-├── css/
-│   ├── main.css
-│   ├── home.css
-│   ├── about.css
-│   ├── catalog.css
-│   ├── gallery.css
-│   ├── order.css
-│   ├── contact.css
-│   └── faq.css
-│
-├── js/
-│   ├── main.js
-│   ├── products.js
-│   ├── catalog.js
-│   ├── gallery.js
-│   ├── order.js
-│   ├── contact.js
-│   └── faq.js
-│
-├── assets/
-│   ├── logo/
-│   ├── cakes/
-│   ├── gallery/
-│   ├── icons/
-│   ├── team/
-│   └── backgrounds/
-│
-├── sitemap.xml
-├── robots.txt
-├── manifest.json
-├── browserconfig.xml
-├── favicon.ico
-└── README.md
+Dream Bakerz static website
+
+index.html, catalog.html, order.html, about.html, contact.html, 404.html
+components/  Shared header and footer
+css/         Tokens, base, site and form styles
+js/          Product data, rendering, navigation, validation and WhatsApp flows
+assets/      Original images, optimized WebP, local fonts and licenses
+scripts/     Shared component/catalog build, image optimization, verified SEO activation
+tests/       Preview server, responsive/functional browser checks, accessibility checks
+docs/        Audit, cleanup log, image metrics, reports and screenshots
+_headers     Cloudflare caching and security headers
+robots.txt   Crawl rules (production sitemap pending verified origin)

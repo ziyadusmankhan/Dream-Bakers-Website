@@ -1,0 +1,115 @@
+/* Requested interaction effects. The existing palette and photography stay central. */
+
+/* Larger identity and compact, always-visible WhatsApp navigation action. */
+.header-actions{display:flex;align-items:center;gap:.4rem;order:1;margin-left:auto}
+.menu-toggle{order:2}
+.header-whatsapp{position:relative;display:grid;place-items:center;width:44px;height:44px;color:#17664D;border:1px solid #B7CCC0;border-radius:var(--radius);transition:background var(--duration),color var(--duration)}
+.header-whatsapp svg{width:27px;height:27px}
+.header-whatsapp:hover{background:#E7F1EB;color:#10513D}
+.icon-tooltip{position:absolute;top:calc(100% + .6rem);right:0;background:var(--cocoa);color:white;padding:.3rem .65rem;font-size:.8rem;white-space:nowrap;border-radius:4px;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity var(--duration),transform var(--duration),visibility var(--duration);pointer-events:none}
+.header-whatsapp:is(:hover,:focus-visible) .icon-tooltip{opacity:1;visibility:visible;transform:none}
+.footer-identity{display:flex;align-items:center;gap:1rem;text-decoration:none;margin-bottom:1.1rem;width:fit-content}
+.footer-identity img{width:112px;height:112px;object-fit:contain}
+.footer-identity .footer-brand{max-width:7ch;line-height:1.1}
+.footer-whatsapp{gap:.5rem}.footer-whatsapp svg{width:22px;height:22px;flex-shrink:0}
+
+/* 1. A holographic sheen stays confined to photography, on interaction only. */
+.cake-image{position:relative;isolation:isolate}
+.cake-image::after{content:'';position:absolute;inset:-35%;pointer-events:none;background:linear-gradient(115deg,transparent 22%,#F3D5F165 35%,#AEE7E95C 43%,#FFF8D999 50%,#E4BAEF70 57%,transparent 70%);mix-blend-mode:soft-light;opacity:0;transform:translateX(-55%) rotate(-8deg);transition:opacity 240ms ease}
+.cake-image:is(:hover,:focus-visible)::after{opacity:.85;animation:holographic-sweep 900ms ease-out both}
+@keyframes holographic-sweep{from{transform:translateX(-55%) rotate(-8deg)}to{transform:translateX(40%) rotate(-8deg)}}
+
+/* 2. Native details supplies keyboard/touch dropdown behavior; CSS animates it. */
+.nav-cakes{display:flex;align-items:center;position:relative;flex-wrap:wrap}
+.nav-cakes>.nav-link{min-height:44px;display:flex;align-items:center;text-decoration:none}
+.nav-cakes:has([aria-current=page])>.nav-link{color:var(--berry);text-decoration:underline}
+.nav-dropdown{position:static}
+.nav-dropdown>summary{display:grid;place-items:center;cursor:pointer;list-style:none;width:44px;height:44px;border-radius:var(--radius)}
+.nav-dropdown>summary::-webkit-details-marker{display:none}
+.nav-dropdown>summary svg{width:18px;height:18px;transition:transform 200ms ease}
+.nav-dropdown[open]>summary svg{transform:rotate(180deg)}
+.nav-dropdown>summary:hover{background:#E8C9BB45;color:var(--berry)}
+.nav-submenu{position:absolute;top:100%;left:0;z-index:12;min-width:245px;padding:.6rem;background:var(--white);border:var(--border);border-radius:var(--radius);box-shadow:0 8px 24px #37292312}
+.nav-dropdown[open] .nav-submenu{animation:dropdown-in 200ms ease-out both}
+.nav-submenu a{display:flex;align-items:center;min-height:44px;padding:.5rem .7rem;border-radius:4px;text-decoration:none;font-size:.9rem}
+.nav-submenu a:is(:hover,:focus-visible){background:var(--ivory);color:var(--berry)}
+@keyframes dropdown-in{from{transform:translateY(-7px)}to{transform:translateY(0)}}
+
+/* 3–5. Social hover, icon motion, and dark gradient text/icon ink. */
+.social-links{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:1.3rem}
+.social-link{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;padding:.5rem .7rem;min-height:44px;border:var(--border);border-radius:var(--radius);text-decoration:none;transition:border-color var(--duration),background var(--duration)}
+.social-link svg{width:20px;height:20px;flex-shrink:0;transition:transform 250ms ease}
+.social-label{font-size:.85rem;position:relative}
+.social-label::after{content:'';position:absolute;left:0;right:0;bottom:-3px;height:1px;background:var(--berry);transform:scaleX(0);transform-origin:left;transition:transform 250ms ease}
+.social-link:is(:hover,:focus-visible){border-color:var(--berry);background:white}
+.social-link:is(:hover,:focus-visible) .social-label::after{transform:scaleX(1)}
+.social-link:is(:hover,:focus-visible) .social-label{color:var(--berry)}
+@supports(background-clip:text){.social-link:is(:hover,:focus-visible) .social-label{background:linear-gradient(110deg,#A53D63,#60418C,#17664D);background-clip:text;-webkit-background-clip:text;color:transparent}}
+.social-instagram{--hover-icon:url(#instagram-ink)}.social-facebook{--hover-icon:url(#facebook-ink)}
+.social-link:is(:hover,:focus-visible) svg{--icon-paint:var(--hover-icon);transform:translateY(-2px) rotate(-6deg)}
+.icon-hover svg{transition:transform 250ms ease}
+.icon-hover:is(:hover,:focus-visible) svg{transform:rotate(-8deg) scale(1.08)}
+
+/* 6. Creative menu hover: a two-tone underline, drawn from opposite ends. */
+.nav-link{position:relative;width:fit-content}
+.nav-link::before,.nav-link::after{content:'';position:absolute;bottom:5px;height:2px;width:50%;transform:scaleX(0);transition:transform 220ms ease}
+.nav-link::before{left:0;background:var(--berry);transform-origin:left}
+.nav-link::after{right:0;background:#907098;transform-origin:right}
+.nav-link:is(:hover,:focus-visible)::before,.nav-link:is(:hover,:focus-visible)::after{transform:scaleX(1)}
+
+/* 7. Once-only typewriter. Real text retains its full width and accessible name. */
+.typewriter{position:relative;display:inline-block;vertical-align:bottom;overflow:hidden;max-width:100%}
+.typewriter::after{content:'';position:absolute;inset:0;background:var(--ivory);border-left:2px solid var(--berry);animation:typewriter-wipe 2s steps(34,end) 150ms both;pointer-events:none}
+@keyframes typewriter-wipe{to{transform:translateX(101%)}}
+
+/* 8. CSS scroll progress plus short, once-only photo/process entrances. */
+.scroll-progress{display:none}
+@supports(animation-timeline:scroll()){
+ .scroll-progress{display:block;position:fixed;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--berry),#907098);transform-origin:left;z-index:30;pointer-events:none;animation:page-progress linear both;animation-timeline:scroll(root)}
+}
+@keyframes page-progress{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.scroll-reveal.is-revealed{animation:scroll-in 600ms cubic-bezier(.2,.65,.3,1) both}
+@keyframes scroll-in{from{transform:translateY(18px)}to{transform:none}}
+
+/* 9. Text wipes upward into view when it enters the viewport. Unobserved
+   content stays visible, including when JavaScript/IntersectionObserver fails. */
+.text-reveal.is-revealed{animation:text-unveil 700ms cubic-bezier(.2,.65,.3,1) both}
+@keyframes text-unveil{from{clip-path:inset(100% 0 0 0);transform:translateY(12px)}to{clip-path:inset(-10% -2% -10% -2%);transform:none}}
+
+/* Fixed contact action remains available without JavaScript. */
+.whatsapp-float{position:fixed;right:max(1rem,env(safe-area-inset-right));bottom:max(1rem,env(safe-area-inset-bottom));z-index:15;display:grid;place-items:center;width:56px;height:56px;border:1px solid #0D634A;border-radius:14px;background:#17664D;color:white;box-shadow:0 4px 14px #37292324;text-decoration:none;transition:background var(--duration)}
+.whatsapp-float svg{width:32px;height:32px}
+.whatsapp-float:hover{background:#10513D;color:white}
+.float-label{position:absolute;right:calc(100% + .65rem);white-space:nowrap;background:var(--cocoa);color:white;border-radius:4px;padding:.45rem .7rem;font-size:.85rem;opacity:0;visibility:hidden;transform:translateX(5px);transition:opacity var(--duration),transform var(--duration),visibility var(--duration);pointer-events:none}
+.whatsapp-float:is(:hover,:focus-visible) .float-label{opacity:1;visibility:visible;transform:none}
+
+@media(max-width:63.99rem){
+ .site-nav{border-top:var(--border)}
+ .nav-cakes{width:100%}.nav-dropdown{flex:1}
+ .nav-dropdown>summary{margin-left:.2rem}
+ .nav-submenu{position:static;width:100%;min-width:0;margin-top:.3rem;box-shadow:none}
+ .nav-cakes:has(details[open])>.nav-link{align-self:flex-start}
+ .nav-dropdown[open]{display:contents}.nav-dropdown[open] .nav-submenu{flex-basis:100%}
+}
+@media(min-width:64rem){.site-nav,.js .site-nav{margin-left:auto}.header-actions{margin-left:0}}
+@media(max-width:39.99rem){
+ .menu-toggle{width:44px;justify-content:center;padding:.5rem}
+ .menu-toggle>span{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
+ .brand small{font-size:.65rem}.brand-name{font-size:1.3rem}
+}
+@media(max-width:22rem){
+ .brand img{width:64px;height:64px}.brand-name{font-size:1.08rem}.brand small{display:none}
+ .brand{gap:.35rem}.header-inner{gap:.35rem;min-height:82px}.header-actions{gap:.3rem}
+ .footer-identity img{width:96px;height:96px}
+}
+@media(prefers-reduced-motion:reduce){
+ .typewriter::after,.scroll-progress{display:none}
+ .scroll-reveal,.text-reveal{opacity:1;transform:none;clip-path:none}
+ .cake-image::after{display:none}
+ .icon-hover:is(:hover,:focus-visible) svg,.social-link:is(:hover,:focus-visible) svg{transform:none}
+ .icon-tooltip,.float-label{transition:none}
+}
+@media(forced-colors:active){
+ .social-link:is(:hover,:focus-visible) .social-label{background:none;color:LinkText}
+ .social-link:is(:hover,:focus-visible) svg{--icon-paint:currentColor}
+}

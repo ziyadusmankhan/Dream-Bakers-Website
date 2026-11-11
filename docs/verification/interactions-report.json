@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-11T12:13:24.318Z",
+  "checks": [
+    "320px: larger logo, footer logo, two WhatsApp actions and keyboard dropdown without overflow",
+    "375px: larger logo, footer logo, two WhatsApp actions and keyboard dropdown without overflow",
+    "390px: larger logo, footer logo, two WhatsApp actions and keyboard dropdown without overflow",
+    "430px: larger logo, footer logo, two WhatsApp actions and keyboard dropdown without overflow",
+    "768px: larger logo, footer logo, two WhatsApp actions and keyboard dropdown without overflow",
+    "1024px: larger logo, footer logo, two WhatsApp actions and keyboard dropdown without overflow",
+    "1440px: larger logo, footer logo, two WhatsApp actions and keyboard dropdown without overflow",
+    "CSS typewriter animation preserves a single readable source string",
+    "Creative navigation underline, holographic photo hover, scroll entrance and text reveal",
+    "Social media hover, gradient text/SVG ink and WhatsApp icon motion",
+    "Dropdown closes on outside click; desktop header/footer screenshots saved",
+    "Reduced motion disables typing cover, holographic sweep and scroll progress while content stays visible",
+    "Native dropdown and fixed WhatsApp link work without JavaScript"
+  ],
+  "result": "PASS"
+}

@@ -1,0 +1,7 @@
+node_modules/
+test-results/
+.DS_Store
+Thumbs.db
+dreambakerzprompt.md
+docs/verification/*.png
+docs/verification/*.jpg

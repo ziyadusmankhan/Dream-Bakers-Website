@@ -1,0 +1,17 @@
+{
+  "name": "dream-bakerz-website",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node tests/server.cjs",
+    "build": "node scripts/build.mjs",
+    "test:browser": "node tests/browser.cjs",
+    "test:static": "python tests/static.py",
+    "test:interactions": "node tests/interactions.cjs",
+    "test:accessibility": "node tests/accessibility.cjs"
+  },
+  "devDependencies": {
+    "axe-core": "4.14.0",
+    "playwright": "1.62.1"
+  }
+}
