@@ -1,0 +1,15 @@
+/* Shared design tokens. Breakpoints: 40rem (640px), 64rem (1024px).
+   CSS custom properties cannot be used in native media queries. */
+@font-face{font-family:Fraunces;src:url('/assets/fonts/fraunces-latin.woff2') format('woff2');font-style:normal;font-weight:400 700;font-display:swap}
+@font-face{font-family:Outfit;src:url('/assets/fonts/outfit-latin.woff2') format('woff2');font-style:normal;font-weight:400 700;font-display:swap}
+:root{
+  --ivory:#F8F4EE;--cocoa:#372923;--berry:#A53D63;--berry-dark:#86304F;
+  --blush:#E8C9BB;--muted:#6D655D;--white:#FFF;--line:#DAD1C8;
+  --error:#A02032;--focus:#703052;--heading:'Fraunces',Georgia,serif;--body:'Outfit',Arial,sans-serif;
+  --text-sm:.875rem;--text-base:1rem;--text-lg:1.125rem;
+  --h1:clamp(2.55rem,5.2vw,4.75rem);--h2:clamp(2rem,3.6vw,3rem);--h3:clamp(1.3rem,2vw,1.65rem);
+  --space-1:.5rem;--space-2:1rem;--space-3:1.5rem;--space-4:2rem;--space-5:3rem;--space-6:4.5rem;
+  --section-space:clamp(3.5rem,7vw,6.5rem);--content:76rem;--reading:43rem;
+  --radius:6px;--border:1px solid var(--line);--shadow:0 4px 16px #3729230D;
+  --duration:180ms;--focus-ring:3px solid var(--focus);
+}

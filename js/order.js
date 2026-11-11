@@ -1,660 +1,96 @@
-/*=========================================
-        DOM ELEMENTS
-=========================================*/
-
-// Inputs
-const cakeDesign = document.getElementById("cakeDesign");
-const flavor = document.getElementById("flavor");
-const occasion = document.getElementById("occasion");
-const cakeMessage = document.getElementById("cakeMessage");
-const deliveryDate = document.getElementById("deliveryDate");
-const removeImage =
-    document.getElementById("removeImage");
-const notes = document.getElementById("notes");
-const deliveryAddress =
-    document.getElementById("deliveryAddress");
-
-const addressGroup =
-    document.getElementById("addressGroup");
-
-const referenceImage =
-    document.getElementById("referenceImage");
-
-const imagePreview =
-    document.getElementById("imagePreview");
-const uploadArea =
-    document.getElementById("uploadArea");
-
-
-uploadArea.addEventListener("click",()=>{
-
-    referenceImage.click();
-
+import { products, getProduct, imagePath } from './products.js';
+import { setupValidation, validateForm, clearFieldError } from './forms.js';
+import { buildQuoteMessage, openWhatsApp } from './whatsapp.js';
+const form = document.getElementById('cakeForm');
+const design = document.getElementById('cakeDesign');
+const customGroup = document.getElementById('customDesignGroup');
+const custom = document.getElementById('customDesign');
+const date = document.getElementById('deliveryDate');
+const addressGroup = document.getElementById('addressGroup');
+const address = document.getElementById('deliveryAddress');
+const reference = document.getElementById('referenceImage');
+const preview = document.getElementById('imagePreview');
+const previewGroup = document.getElementById('referencePreview');
+const filename = document.getElementById('fileName');
+const feedback = document.getElementById('formFeedback');
+let objectURL = null;
+design.replaceChildren(new Option('Choose a design', ''), ...products.map(product => new Option(product.title, product.id)), new Option('My own custom design', 'custom'));
+const requested = new URLSearchParams(location.search).get('cake');
+if (getProduct(requested)) design.value = requested;
+else if (requested === 'custom') design.value = 'custom';
+else if (requested) document.getElementById('designNotice').hidden = false;
+function localDate() {
+  const now = new Date();
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+}
+function readDetails() {
+  const data = new FormData(form);
+  return {
+    design: getProduct(design.value)?.title || (design.value === 'custom' ? custom.value.trim() || 'My own custom design' : ''),
+    weight: data.get('weight') || '',flavor: data.get('flavor') || '',occasion: data.get('occasion') || '',
+    message: data.get('cakeMessage').trim(),date: data.get('deliveryDate') || '',delivery: data.get('delivery') || '',
+    address: data.get('delivery') === 'Home delivery' ? address.value.trim() : '',
+    notes: data.get('notes').trim(),reference: Boolean(reference.files.length && objectURL)
+  };
+}
+function updateSummary() {
+  date.min = localDate();
+  const ownDesign = design.value === 'custom';
+  customGroup.hidden = !ownDesign; custom.disabled = !ownDesign; custom.required = ownDesign;
+  const delivery = form.querySelector('input[name="delivery"]:checked')?.value;
+  addressGroup.hidden = delivery !== 'Home delivery'; address.disabled = addressGroup.hidden; address.required = !addressGroup.hidden;
+  const details = readDetails();
+  const product = getProduct(design.value);
+  const selectedImage = document.getElementById('selectedCakeImage');
+  selectedImage.hidden = !product;
+  if (product) { selectedImage.src = imagePath(product, 400); selectedImage.alt = product.alt; }
+  else selectedImage.removeAttribute('src');
+  document.getElementById('selectedCakeTitle').textContent = details.design || 'Your cake, your way';
+  document.getElementById('selectedDesign').classList.toggle('has-image', Boolean(product));
+  for (const key of ['weight','flavor','occasion','message','date','delivery','address','notes']) {
+    document.getElementById(`summary-${key}`).textContent = details[key] || (['message','notes'].includes(key) ? 'None added' : 'Not selected');
+  }
+  document.getElementById('summary-address-row').hidden = delivery !== 'Home delivery';
+  document.getElementById('summary-reference').textContent = details.reference ? 'Preview selected; attach manually in WhatsApp' : 'Attach directly in WhatsApp, if needed';
+}
+function revokePreview() { if (objectURL) URL.revokeObjectURL(objectURL); objectURL = null; }
+function clearPreview() {
+  revokePreview(); reference.value = ''; reference.setCustomValidity(''); clearFieldError(reference);
+  preview.removeAttribute('src'); previewGroup.hidden = true; filename.textContent = '';
+  document.getElementById('referenceError').textContent = ''; updateSummary();
+}
+reference.addEventListener('change', () => {
+  revokePreview(); preview.removeAttribute('src'); previewGroup.hidden = true;
+  const file = reference.files[0]; const error = document.getElementById('referenceError');
+  reference.setCustomValidity(''); error.textContent = '';
+  if (!file) { updateSummary(); return; }
+  if (!['image/jpeg','image/png','image/webp'].includes(file.type) || file.size > 8 * 1024 * 1024) {
+    reference.value = ''; error.textContent = 'Choose a JPG, PNG or WebP image of 8 MB or less.'; updateSummary(); return;
+  }
+  objectURL = URL.createObjectURL(file); preview.src = objectURL; filename.textContent = file.name;
+  previewGroup.hidden = false; updateSummary();
 });
-// Summary
-const summaryCake = document.getElementById("summaryCake");
-const summaryWeight = document.getElementById("summaryWeight");
-const summaryFlavor = document.getElementById("summaryFlavor");
-const summaryOccasion = document.getElementById("summaryOccasion");
-const summaryMessage = document.getElementById("summaryMessage");
-const summaryDelivery = document.getElementById("summaryDelivery");
-const summaryDate = document.getElementById("summaryDate");
-const summaryNotes =
-    document.getElementById("summaryNotes");
-// Buttons
-const whatsappButton =
-document.getElementById("whatsappOrder");
-
-function updateSummary(){
-
-    const selectedWeight =
-        document.querySelector(
-            'input[name="weight"]:checked'
-        );
-
-    const selectedDelivery =
-        document.querySelector(
-            'input[name="delivery"]:checked'
-        );
-
-    summaryCake.textContent =
-        cakeDesign.value || "—";
-
-    summaryWeight.textContent =
-        selectedWeight
-            ? selectedWeight.value
-            : "—";
-
-    summaryFlavor.textContent =
-        flavor.value || "—";
-
-    summaryOccasion.textContent =
-        occasion.value || "—";
-
-    summaryMessage.textContent =
-        cakeMessage.value || "—";
-
-    summaryDelivery.textContent =
-        selectedDelivery
-            ? selectedDelivery.value
-            : "—";
-
-    summaryDate.textContent =
-        deliveryDate.value || "—";
-    summaryNotes.textContent =
-
-    notes.value.trim()
-
-    ||
-
-    "No additional instructions.";
-
-    animateSummary(summaryNotes);
-
-    updateWhatsApp();
-    animateSummary(summaryWeight);
-
-}
-
-function updateWhatsApp(){
-
-    const weight =
-        document.querySelector(
-            'input[name="weight"]:checked'
-        );
-
-    const delivery =
-        document.querySelector(
-            'input[name="delivery"]:checked'
-        );
-
-    const message = `Hello Dream Bakers,
-
-I would like to order a custom cake.
-
-Cake Design:
-${cakeDesign.value || "-"}
-
-Weight:
-${weight ? weight.value : "-"}
-
-Flavor:
-${flavor.value || "-"}
-
-Occasion:
-${occasion.value || "-"}
-
-Message on Cake:
-${cakeMessage.value || "-"}
-
-Delivery Date:
-${deliveryDate.value || "-"}
-
-Delivery Method:
-${delivery ? delivery.value : "-"}
-
-Additional Instructions:
-${notes.value || "-"}
-
-Please let me know the final quotation.
-
-Thank you!`;
-
-    whatsappButton.href =
-        `https://wa.me/923477268670?text=${encodeURIComponent(message)}`;
-
-}
-function setMinimumDate(){
-
-    const today = new Date();
-
-    const yyyy = today.getFullYear();
-
-    const mm = String(today.getMonth()+1).padStart(2,"0");
-
-    const dd = String(today.getDate()).padStart(2,"0");
-
-    deliveryDate.min = `${yyyy}-${mm}-${dd}`;
-
-}
-function toggleAddress(){
-
-    const delivery =
-        document.querySelector(
-            'input[name="delivery"]:checked'
-        );
-
-    if(
-
-        delivery &&
-
-        delivery.value === "Home Delivery"
-
-    ){
-
-        addressGroup.classList.remove("hidden");
-
-    }
-
-    else{
-
-        addressGroup.classList.add("hidden");
-
-    }
-
-}
-function previewImage(){
-
-    const file = referenceImage.files[0];
-
-    if(!file){
-
-        imagePreview.style.display = "none";
-
-        removeImage.style.display = "none";
-
-        fileName.textContent = "";
-
-        return;
-
-    }
-
-    imagePreview.src = URL.createObjectURL(file);
-
-    imagePreview.style.display = "block";
-
-    removeImage.style.display = "inline-block";
-
-    fileName.textContent = "✔ " + file.name;
-
-}
-function clearImage(){
-
-    referenceImage.value = "";
-
-    imagePreview.src = "";
-
-    imagePreview.style.display = "none";
-
-    removeImage.style.display = "none";
-
-    fileName.textContent = "";
-
-}
-
-/*=========================================
-EVENTS
-=========================================*/
-
-function attachEvents(){
-    
-    cakeDesign.addEventListener(
-        "change",
-        updateSummary
-    );
-    removeImage.addEventListener(
-    
-        "click",
-    
-        clearImage
-    
-    );
-    uploadArea.addEventListener("dragover",(e)=>{
-    
-        e.preventDefault();
-    
-        uploadArea.classList.add("dragover");
-    
-    });
-    
-    uploadArea.addEventListener("dragleave",()=>{
-    
-        uploadArea.classList.remove("dragover");
-    
-    });
-    
-    uploadArea.addEventListener("drop",(e)=>{
-    
-        e.preventDefault();
-    
-        uploadArea.classList.remove("dragover");
-    
-        referenceImage.files = e.dataTransfer.files;
-    
-        previewImage();
-    
-    });
-    
-
-    flavor.addEventListener(
-        "change",
-        updateSummary
-    );
-
-    occasion.addEventListener(
-        "change",
-        updateSummary
-    );
-
-    cakeMessage.addEventListener(
-        "input",
-        updateSummary
-    );
-
-    deliveryDate.addEventListener(
-        "change",
-        updateSummary
-    );
-
-    notes.addEventListener(
-        "input",
-        updateSummary
-    );
-    referenceImage.addEventListener(
-
-    "change",
-
-    previewImage
-
-);
-
-document
-
-.querySelectorAll('input[name="delivery"]')
-
-.forEach(radio=>{
-
-    radio.addEventListener("change",()=>{
-
-        toggleAddress();
-
-        updateSummary();
-
-    });
-
+preview.addEventListener('error', () => {
+  clearPreview();
+  document.getElementById('referenceError').textContent = 'This image could not be previewed. Choose another image or attach it directly in WhatsApp.';
 });
-
-    document.querySelectorAll('input[name="weight"]').forEach(radio=>{
-
-        radio.addEventListener(
-            "change",
-            updateSummary
-        );
-
-    });
-
-    document
-    .querySelectorAll('input[name="delivery"]')
-    .forEach(radio=>{
-
-        radio.addEventListener(
-            "change",
-            updateSummary
-        );
-
-    });
-
-}
-/*=========================================
-        VALIDATION HELPERS
-=========================================*/
-
-function clearErrors(){
-
-    document
-    .querySelectorAll(".input-error")
-    .forEach(input=>{
-
-        input.classList.remove("input-error");
-
-    });
-
-    document
-    .querySelectorAll(".error-message")
-    .forEach(error=>{
-
-        error.remove();
-
-    });
-
-}
-function animateSummary(element){
-
-    element.classList.add("updated");
-
-    setTimeout(()=>{
-
-        element.classList.remove("updated");
-
-    },300);
-
-}
-function showError(element,message){
-
-    element.classList.add("input-error");
-    element.classList.remove("input-success");
-
-
-    const error =
-        document.createElement("div");
-
-    error.className="error-message";
-
-    error.textContent=message;
-
-    element.insertAdjacentElement(
-
-        "afterend",
-
-        error
-
-    );
-
-}
-function validateForm(){
-
-    clearErrors();
-
-    let valid = true;
-
-    let firstError = null;
-
-    function check(condition,element,message){
-
-        if(condition) return;
-
-        valid = false;
-
-        showError(element,message);
-
-        if(!firstError){
-
-            firstError = element;
-
-        }
-
-    }
-
-    check(
-
-        cakeDesign.value,
-        
-
-        cakeDesign,
-
-        "Please choose a cake design."
-
-    );
-
-    check(
-
-        flavor.value,
-
-        flavor,
-
-        "Please choose a flavor."
-
-    );
-
-    check(
-
-        occasion.value,
-
-        occasion,
-
-        "Please choose an occasion."
-
-    );
-
-    check(
-
-        deliveryDate.value,
-
-        deliveryDate,
-
-        "Please select a delivery date."
-
-    );
-
-    const weight =
-
-    document.querySelector(
-
-        'input[name="weight"]:checked'
-
-    );
-
-    check(
-
-        weight,
-
-        document.querySelector(".weight-options"),
-
-        "Please select a cake weight."
-
-    );
-
-    const delivery =
-
-    document.querySelector(
-
-        'input[name="delivery"]:checked'
-
-    );
-
-    check(
-
-        delivery,
-
-        document.querySelector(".delivery-options"),
-
-        "Please select delivery method."
-
-    );
-
-    if(
-
-        delivery &&
-
-        delivery.value==="Home Delivery"
-
-    ){
-
-        check(
-
-            deliveryAddress.value.trim(),
-
-            deliveryAddress,
-
-            "Please enter your delivery address."
-
-        );
-
-    }
-
-    if(firstError){
-
-        firstError.scrollIntoView({
-
-            behavior:"smooth",
-
-            block:"center"
-
-        });
-
-    }
-
-    return valid;
-
-}
-whatsappButton.addEventListener("click",(e)=>{
-
-    e.preventDefault();
-
-    if(!validateForm()){
-
-        showToast(
-
-            "Please complete all required fields.",
-
-            "error"
-
-        );
-
-        return;
-
-    }
-
-    showToast(
-
-        "Order ready! Redirecting to WhatsApp...",
-
-        "success"
-
-    );
-
-   setTimeout(() => {
-
-    window.open(
-        whatsappButton.href,
-        "_blank"
-    );
-
-}, 600);
-
+document.getElementById('removeImage').addEventListener('click', clearPreview);
+window.addEventListener('pagehide', () => { revokePreview(); previewGroup.hidden = true; });
+window.addEventListener('pageshow', event => { if (event.persisted) { clearPreview(); updateSummary(); } });
+setupValidation(form);
+form.addEventListener('input', updateSummary);
+form.addEventListener('change', () => {
+  updateSummary();
+  const url = new URL(location.href);
+  if (design.value) url.searchParams.set('cake', design.value); else url.searchParams.delete('cake');
+  history.replaceState(null, '', url);
 });
-/*=========================================
-        TOAST
-=========================================*/
-
-function showToast(message,type){
-
-    const toast =
-        document.getElementById("toast");
-
-    toast.textContent = message;
-
-    toast.className =
-
-        `toast ${type} show`;
-
-    setTimeout(()=>{
-
-        toast.classList.remove("show");
-
-    },3000);
-
-}
-function markValid(element){
-
-    element.classList.remove("input-error");
-
-    element.classList.add("input-success");
-
-}
-cakeDesign.addEventListener("change",()=>{
-
-    if(cakeDesign.value){
-
-        markValid(cakeDesign);
-
-    }
-
+form.addEventListener('submit', event => {
+  event.preventDefault(); updateSummary();
+  custom.setCustomValidity(custom.required && !custom.value.trim() ? 'Describe the cake design you have in mind.' : '');
+  address.setCustomValidity(address.required && !address.value.trim() ? 'Enter the home delivery address.' : '');
+  if (!validateForm(form, feedback)) return;
+  openWhatsApp(buildQuoteMessage(readDetails()));
 });
-flavor.addEventListener("change",()=>{
-
-    if(flavor.value){
-
-        markValid(flavor);
-
-    }
-
-});
-deliveryAddress.addEventListener("change",()=>{
-
-    if(deliveryAddress.value){
-
-        markValid(deliveryAddress);
-
-    }
-
-});
-deliveryDate.addEventListener("change",()=>{
-
-    if(deliveryDate.value){
-
-        markValid(deliveryDate);
-
-    }
-
-});
-occasion.addEventListener("change",()=>{
-
-    if(occasion.value){
-
-        markValid(occasion);
-
-    }
-
-});
-/*=========================================
-        INITIALIZE
-=========================================*/
-
-function initOrderPage(){
-
-    attachEvents();
-
-    updateSummary();
-
-    setMinimumDate();
-
-    toggleAddress();
-
-}
-
-/*=========================================
-        START
-=========================================*/
-
-initOrderPage();
+updateSummary();
+form.querySelector('[type="submit"]').disabled = false;

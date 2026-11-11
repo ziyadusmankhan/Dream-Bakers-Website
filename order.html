@@ -1,626 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-PK">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="responsive/header-mobile.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="responsive/footer-mobile.css">
-    <link rel="icon" type="image/x-icon" href="assets/logo/Make_image_clear_upscale_2K_202607261051.jpeg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Custom Cake | Dream Bakerz Islamabad</title>
+  <meta name="description" content="Choose a cake design, flavor, weight and date, then request a quotation from Dream Bakerz on WhatsApp. Prices and availability are confirmed by the bakery.">
+  <meta name="theme-color" content="#F8F4EE">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_PK">
+  <meta property="og:site_name" content="Dream Bakerz">
+  <meta property="og:title" content="Request a Custom Cake | Dream Bakerz Islamabad">
+  <meta property="og:description" content="Choose a cake design, flavor, weight and date, then request a quotation from Dream Bakerz on WhatsApp. Prices and availability are confirmed by the bakery.">
+  <meta property="og:image" content="/assets/cakes/optimized/share.jpg">
+  <meta property="og:image:alt" content="Lavender butterfly cake by Dream Bakerz">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="/assets/logo/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/logo/apple-touch-icon.png">
+  <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/outfit-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/css/tokens.css">
+  <link rel="stylesheet" href="/css/base.css">
+  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="/css/effects.css">
+  <link rel="stylesheet" href="/css/forms.css">
 
-    <link rel="icon" type="image/png" sizes="32x32"
-    href="assets/logo/Make_image_clear_upscale_2K_202607261051.jpeg">
-
-    <link rel="icon" type="image/png" sizes="16x16"
-    href="assets/logo/Make_image_clear_upscale_2K_202607261051.jpeg">
-
-    <link rel="apple-touch-icon"
-    href="assets/logo/Make_image_clear_upscale_2K_202607261051.jpeg">
-    <!-- <link rel="stylesheet" href="css/hero.css"> -->
-    <!-- <link rel="stylesheet" href="css/features.css"> -->
-    <!-- <link rel="stylesheet" href="css/featured.css"> -->
-    <link rel="stylesheet" href="css/order.css">
-    <link rel="stylesheet" href="responsive/order-mobile.css">
-    <link rel="stylesheet" href="css/toast.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Bakery", "name": "Dream Bakerz", "description": "Customized cakes and homemade bakery products in B-17, Islamabad, Pakistan.", "telephone": "+923477268670", "address": {"@type": "PostalAddress", "addressLocality": "B-17, Islamabad", "addressCountry": "PK"}}</script>
+  <script type="module" src="/js/main.js"></script>
+  <script type="module" src="/js/order.js"></script>
 </head>
-<body class="page-order">
-        <div id="header"></div>
-
-    <main>
-        <section class="order-page">
-            <!-- <nav><a href="index.html"><img src="assets/cakes/hero/Clear_image_upscale_change_spelling_202607190503.jpeg" alt=""></a></nav> -->
-
-    <div class="container">
-
-        <div class="order-header">
-
-            <span class="order-tag">
-                ✨ Custom Cake Order
-            </span>
-
-            <h1>
-                Design Your Dream Cake
-            </h1>
-
-            <p>
-
-                Tell us your dream cake and we'll prepare a
-                personalized quotation based on the design,
-                weight and customization.
-
-            </p>
-
-        </div>
-
-       <div class="order-layout">
-
-    <!-- LEFT SIDE -->
-    <div class="order-form">
-
-        <!-- ==========================
-             CAKE DETAILS
-        =========================== -->
-
-        <div class="form-card">
-
-            <div class="card-header">
-
-                <div class="card-icon">🎂</div>
-
-                <div>
-
-                    <h2>Cake Details</h2>
-
-                    <p>Select your preferred cake options.</p>
-
-                </div>
-
-            </div>
-
-            <!-- Cake Design -->
-            <div class="form-group">
-
-                <label for="cakeDesign">
-                    Cake Design
-                </label>
-
-                <select id="cakeDesign">
-
-                    <option value="">Select Cake Design</option>
-                    
-                    <option value="Chocolate Truffle">Chocolate Truffle</option>
-                    <option value="Red Velvet">Red Velvet</option>
-                    <option value="Birthday Special">Birthday Special</option>
-
-                </select>
-
-            </div>
-
-            <!-- Weight -->
-            <div class="form-group">
-
-    <label>Cake Weight</label>
-
-    <div class="weight-options">
-
-        <label class="weight-card">
-
-            <input
-                type="radio"
-                name="weight"
-                value="1 Pound">
-
-            <span class="weight-content">
-
-                <span class="weight-icon">🎂</span>
-
-                <strong>1 Pound</strong>
-
-                <small>
-                    Perfect for 4–6 People
-                </small>
-
-            </span>
-
-        </label>
-
-        <label class="weight-card">
-
-            <input
-                type="radio"
-                name="weight"
-                value="2 Pounds">
-
-            <span class="weight-content">
-
-                <span class="weight-icon">🍰</span>
-
-                <strong>2 Pounds</strong>
-
-                <small>
-                    Perfect for 8–12 People
-                </small>
-
-            </span>
-
-        </label>
-
-        <label class="weight-card">
-
-            <input
-                type="radio"
-                name="weight"
-                value="3 Pounds">
-
-            <span class="weight-content">
-
-                <span class="weight-icon">🎉</span>
-
-                <strong>3 Pounds</strong>
-
-                <small>
-                    Great for Parties
-                </small>
-
-            </span>
-
-        </label>
-
-        <label class="weight-card">
-
-            <input
-                type="radio"
-                name="weight"
-                value="5 Pounds">
-
-            <span class="weight-content">
-
-                <span class="weight-icon">👑</span>
-
-                <strong>5 Pounds</strong>
-
-                <small>
-                    Large Celebration
-                </small>
-
-            </span>
-
-        </label>
-
-    </div>
-
-</div>
-
-            <!-- Flavor -->
-
-            <div class="form-group">
-
-                <label for="flavor">
-
-                    Cake Flavor
-
-                </label>
-
-                <select id="flavor">
-
-                    <option value="">Choose Flavor</option>
-                    <option value="">Choose Flavor</option>
-                    <option value="Chocolate">Chocolate</option>
-                    <option value="Vanilla">Vanilla</option>
-                    <option value="Red Velvet">Red Velvet</option>
-                    <option value="Pineapple">Pineapple</option>                
-
-                </select>
-
-            </div>
-
-        </div>
-
-        <!-- ==========================
-             OCCASION
-        =========================== -->
-
-        <div class="form-card">
-
-            <div class="card-header">
-
-                <div class="card-icon">🎉</div>
-
-                <div>
-
-                    <h2>Occasion</h2>
-
-                    <p>Personalize your celebration.</p>
-
-                </div>
-
-            </div>
-
-            <div class="form-group">
-
-                <label for="occasion">
-
-                    Occasion
-
-                </label>
-
-                <select id="occasion">
-
-                    <option value="">Choose Occasion</option>
-                     <option value="Birthday">Birthday</option>
-                     <option value="Wedding">Wedding</option>
-                     <option value="Anniversary">Anniversary</option>
-
-                     <option value="Engagement">Engagement</option>
-
-                     <option value="Baby Shower">Baby Shower</option>
-
-                     <option value="Graduation">Graduation</option>
-
-                </select>
-
-            </div>
-
-            <div class="form-group">
-
-                <label for="cakeMessage">
-
-                    Message on Cake
-
-                </label>
-
-                <input
-                    type="text"
-                    id="cakeMessage"
-                    placeholder="Happy Birthday Ali">
-
-            </div>
-
-        </div>
-
-        <!-- ==========================
-             DELIVERY
-        =========================== -->
-
-        <div class="form-card">
-
-            <div class="card-header">
-
-                <div class="card-icon">🚚</div>
-
-                <div>
-
-                    <h2>Delivery</h2>
-
-                    <p>Select delivery preferences.</p>
-
-                </div>
-
-            </div>
-
-            <div class="form-group">
-
-                <label>
-
-                    Preferred Delivery Date
-
-                </label>
-
-                <input
-                    type="date"
-                    id="deliveryDate">
-
-            </div>
-
-            <div class="form-group">
-
-    <label>Delivery Method</label>
-
-    <div class="delivery-options">
-
-        <label class="delivery-card">
-
-            <input
-                type="radio"
-                name="delivery"
-                value="Pickup">
-
-            <span class="delivery-content">
-
-                <span class="delivery-icon">🏪</span>
-
-                <strong>Pickup</strong>
-
-                <small>
-                    Collect your cake from our bakery.
-                </small>
-
-            </span>
-
-        </label>
-
-        <label class="delivery-card">
-
-            <input
-                type="radio"
-                name="delivery"
-                value="Home Delivery">
-
-            <span class="delivery-content">
-
-                <span class="delivery-icon">🚚</span>
-
-                <strong>Home Delivery</strong>
-
-                <small>
-                    Fresh cake delivered to your doorstep.
-                </small>
-
-            </span>
-
-        </label>
-
-    </div>
-
-</div>
-
-            <div
-                class="form-group hidden"
-                id="addressGroup">
-
-                <label>
-
-                    Delivery Address
-
-                </label>
-
-                <textarea
-                    id="deliveryAddress"
-                    rows="3"></textarea>
-
-            </div>
-
-        </div>
-
-        <!-- ==========================
-             IMAGE
-        =========================== -->
-
-        <div class="form-card" id="uploadArea">
-
-    <div class="card-header">
-
-        <div class="card-icon">📷</div>
-
-        <div>
-
-            <h2>Reference Image</h2>
-
-            <p>
-                Upload a picture of the cake you'd like us to recreate.
-            </p>
-
-        </div>
-
-    </div>
-
-    <label
-        for="referenceImage"
-        class="upload-box">
-
-        <div class="upload-icon">
-
-            ☁️
-
-        </div>
-
-        <h3>
-
-            Upload Inspiration Image
-
-        </h3>
-
-        <p>
-
-            Click to browse or drag & drop
-
-        </p>
-
-        <small>
-
-            JPG • PNG • WEBP
-
-        </small>
-
-    </label>
-
-    <input
-        type="file"
-        id="referenceImage"
-        accept="image/*"
-        hidden>
-
-    <div class="preview-wrapper">
-
-        <img
-            id="imagePreview"
-            alt="Cake Preview">
-
-        <button
-            type="button"
-            id="removeImage"
-            class="remove-image-btn"
-            style="display:none">
-            
-
-            Remove Image
-
-        </button>
-
-    </div>
-
-</div>
-
-        <!-- ==========================
-             NOTES
-        =========================== -->
-
-        <div class="form-card">
-
-            <div class="card-header">
-
-                <div class="card-icon">📝</div>
-
-                <div>
-
-                    <h2>Additional Instructions</h2>
-
-                </div>
-
-            </div>
-
-            <textarea
-                id="notes"
-                rows="6"
-                placeholder="Describe anything special..."></textarea>
-
-        </div>
-
-    </div>
-
-    <!-- RIGHT SIDE -->
-
-    <aside class="order-summary">
-
-        <!-- KEEP YOUR EXISTING SUMMARY HTML HERE -->
-         
-            <aside class="order-summary">
-
-                <!-- Your existing summary goes here -->
-                  <h3>Your Order</h3>
-<div class="summary-card">
-
-    <div class="summary-header">
-
-        <div class="summary-icon">🛒</div>
-
-        <div>
-
-            <h2>Your Cake</h2>
-
-            <p>Live Order Summary</p>
-
-        </div>
-
-    </div>
-
-    <div class="summary-list">
-
-        <div class="summary-item">
-            <span>🎂 Design</span>
-            <strong id="summaryCake">—</strong>
-        </div>
-
-        <div class="summary-item">
-            <span>⚖ Weight</span>
-            <strong id="summaryWeight">—</strong>
-        </div>
-
-        <div class="summary-item">
-            <span>🍰 Flavor</span>
-            <strong id="summaryFlavor">—</strong>
-        </div>
-
-        <div class="summary-item">
-            <span>🎉 Occasion</span>
-            <strong id="summaryOccasion">—</strong>
-        </div>
-
-        <div class="summary-item">
-            <span>✍ Message</span>
-            <strong id="summaryMessage">—</strong>
-        </div>
-
-        <div class="summary-item">
-            <span>📅 Date</span>
-            <strong id="summaryDate">—</strong>
-        </div>
-
-        <div class="summary-item">
-            <span>🚚 Delivery</span>
-            <strong id="summaryDelivery">—</strong>
-        </div>
-
-    </div>
-    <!-- ==========================
-     ADDITIONAL INSTRUCTIONS
-========================== -->
-
-<div class="summary-notes">
-
-    <h3>
-
-        📝 Additional Instructions
-
-    </h3>
-
-    <p id="summaryNotes">
-
-        No additional instructions.
-
-    </p>
-
-</div>
-
-    <div class="pricing-box">
-
-        <h3>Pricing</h3>
-
-        <div class="pricing-row">
-            <span>Base Price</span>
-            <strong>Rs.1500 / Pound</strong>
-        </div>
-
-        <div class="pricing-note">
-
-            Final quotation depends on the selected
-            cake design, weight and customization.
-
-        </div>
-
-
-    </div>
-
-    <a
-        href="#"
-        id="whatsappOrder"
-        class="summary-whatsapp">
-
-        Continue on WhatsApp →
-
+<body>
+<!-- shared:header -->
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="scroll-progress" aria-hidden="true"></div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/index.html">
+      <img src="/assets/logo/logo.webp" alt="" width="96" height="96">
+      <span><span class="brand-name">Dream Bakerz</span><small>Customized cakes in Islamabad</small></span>
     </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="siteNav" aria-expanded="false" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menu</span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Main navigation">
+      <a class="nav-link" href="/index.html">Home</a>
+      <div class="nav-cakes">
+        <a class="nav-link" href="/catalog.html">Cakes</a>
+        <details class="nav-dropdown" id="cakeDropdown">
+          <summary aria-label="Cake options"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></summary>
+          <div class="nav-submenu">
+            <a href="/catalog.html">View all cake designs</a>
+            <a href="/order.html?cake=custom">Create your own design</a>
+            <a href="/index.html#how-it-works">How customization works</a>
+          </div>
+        </details>
+      </div>
+      <a class="nav-link" href="/about.html">Our Story</a><a class="nav-link" href="/contact.html">Contact</a>
+      <a class="button" href="/order.html" aria-current="page">Request a Custom Cake</a>
+    </nav>
+    <div class="header-actions">
+      <a class="header-whatsapp icon-hover" href="https://wa.me/923477268670" aria-label="Chat with Dream Bakerz on WhatsApp">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><use href="/assets/icons/ui.svg#whatsapp"/></svg><span class="icon-tooltip" aria-hidden="true">WhatsApp</span>
+      </a>
+    </div>
+  </div>
+</header>
+<!-- /shared:header -->
+<main id="main" tabindex="-1">
 
-</div>
+<section class="page-heading"><div class="container"><p class="eyebrow">Your custom cake consultation</p><h1>Tell us what you have in mind.</h1><p class="intro">Choose the details below. We’ll prepare a quotation request for you to review and send in WhatsApp.</p></div></section>
+<section class="section gallery-section"><div class="container"><form id="cakeForm" class="consultation-layout" action="/order.html" method="post"><div class="consultation-fields">
+<fieldset class="form-section"><legend>Cake preferences</legend><p class="note">Start with a cake from our collection, or describe your own idea.</p><p id="designNotice" class="note" role="status" hidden>That cake design isn’t in the current collection. Choose another design or tell us about your own.</p><div class="field"><label for="cakeDesign">Cake design (required)</label><select id="cakeDesign" name="cakeDesign" required><option value="">Choose a design</option><!-- design-options --><option value="1">Butterfly fairy cake</option><option value="2">Lavender butterflies</option><option value="3">Princess Sofia cake</option><option value="4">Turquoise celebration</option><option value="5">Gold &amp; pearl birthday</option><option value="6">Blue daisy cake</option><option value="7">Pastel unicorn cake</option><!-- /design-options --><option value="custom">My own custom design</option></select></div><div class="field" id="customDesignGroup" hidden><label for="customDesign">Describe your design (required)</label><textarea id="customDesign" name="customDesign" maxlength="1000" disabled placeholder="Colors, theme, decorations or a reference you’d like to discuss."></textarea></div><fieldset class="choice-group"><legend>Cake weight (required)</legend><div class="choices"><label class="choice"><input type="radio" id="weight-1" name="weight" value="1 pound" required><span>1 pound</span></label><label class="choice"><input type="radio" id="weight-2" name="weight" value="2 pounds" required><span>2 pounds</span></label><label class="choice"><input type="radio" id="weight-3" name="weight" value="3 pounds" required><span>3 pounds</span></label><label class="choice"><input type="radio" id="weight-5" name="weight" value="5 pounds" required><span>5 pounds</span></label></div></fieldset><div class="field"><label for="flavor">Flavor (required)</label><select id="flavor" name="flavor" required><option value="">Choose a flavor</option><option>Chocolate</option><option>Vanilla</option><option>Red Velvet</option><option>Pineapple</option></select><p class="note">The bakery will confirm available options for your design.</p></div></fieldset>
+<fieldset class="form-section"><legend>Occasion & personalization</legend><div class="field"><label for="occasion">Occasion (required)</label><select id="occasion" name="occasion" required><option value="">Choose an occasion</option><option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Engagement</option><option>Baby shower</option><option>Graduation</option><option>Other celebration</option></select></div><div class="field"><label for="cakeMessage">Message on the cake (optional)</label><input type="text" id="cakeMessage" name="cakeMessage" maxlength="120" placeholder="For example: Happy Birthday, Amna"></div><div class="field"><label for="notes">Design notes (optional)</label><textarea id="notes" name="notes" rows="4" maxlength="2000" placeholder="Colors, decorations or anything else we should know."></textarea></div></fieldset>
+<fieldset class="form-section"><legend>Pickup or delivery</legend><div class="field"><label for="deliveryDate">Required date (required)</label><input id="deliveryDate" name="deliveryDate" type="date" required aria-describedby="dateHelp"><p class="note" id="dateHelp">Your date is a request. Availability is confirmed by the bakery.</p></div><fieldset class="choice-group"><legend>How would you like to receive your cake? (required)</legend><div class="choices"><label class="choice"><input type="radio" id="delivery-pickup" name="delivery" value="Pickup" required><span>Pickup</span></label><label class="choice"><input type="radio" id="delivery-home" name="delivery" value="Home delivery" required><span>Home delivery</span></label></div></fieldset><div class="field" id="addressGroup" hidden><label for="deliveryAddress">Delivery address (required)</label><textarea id="deliveryAddress" name="deliveryAddress" autocomplete="street-address" rows="3" maxlength="600" disabled aria-describedby="addressHelp"></textarea><p class="note" id="addressHelp">Please include your area. Delivery coverage and any charges will be confirmed on WhatsApp.</p></div></fieldset>
+<fieldset class="form-section"><legend>Reference design</legend><p class="note" id="referenceHelp">Optional: preview an inspiration image here. It stays in your browser. After opening WhatsApp, attach the image yourself; this form cannot send it.</p><div class="field"><label for="referenceImage">Choose an image (optional)</label><input type="file" id="referenceImage" name="referenceImage" accept="image/jpeg,image/png,image/webp" aria-describedby="referenceHelp referenceTypes referenceError"><p class="note" id="referenceTypes">JPG, PNG or WebP, up to 8 MB. You can also skip this and attach it directly in WhatsApp.</p><p class="field-error" id="referenceError" role="alert"></p><div class="preview" id="referencePreview" hidden><img id="imagePreview" alt="Your reference design preview"><p id="fileName"></p><button type="button" id="removeImage">Remove preview</button></div></div></fieldset>
+</div><aside class="review-panel" aria-labelledby="reviewHeading"><h2 id="reviewHeading">Your cake at a glance</h2><div class="selected-design" id="selectedDesign"><img id="selectedCakeImage" alt="" width="76" height="94" hidden><div><p id="selectedCakeTitle">Your cake, your way</p><p class="note">A starting point for your quotation</p></div></div><dl class="summary-list"><div class="summary-row"><dt>Weight</dt><dd id="summary-weight">Not selected</dd></div><div class="summary-row"><dt>Flavor</dt><dd id="summary-flavor">Not selected</dd></div><div class="summary-row"><dt>Occasion</dt><dd id="summary-occasion">Not selected</dd></div><div class="summary-row"><dt>Message</dt><dd id="summary-message">Not selected</dd></div><div class="summary-row"><dt>Date</dt><dd id="summary-date">Not selected</dd></div><div class="summary-row"><dt>Method</dt><dd id="summary-delivery">Not selected</dd></div><div class="summary-row" id="summary-address-row" hidden><dt>Address</dt><dd id="summary-address">Not selected</dd></div><div class="summary-row"><dt>Notes</dt><dd id="summary-notes">Not selected</dd></div><div class="summary-row"><dt>Reference</dt><dd id="summary-reference">Not selected</dd></div></dl><div class="pricing-note"><h3>A quotation made for your cake</h3><p class="note">The final price depends on the design, weight and customization. Dream Bakerz will confirm the quotation, availability and arrangements on WhatsApp.</p></div><p class="form-feedback" id="formFeedback" role="alert"></p><button class="button" id="whatsappOrder" type="submit" disabled>Get a Quote on WhatsApp</button><p class="note">Review and send your message in WhatsApp.<br>Your cake is confirmed directly with the baker.</p></aside><noscript><p class="no-script">This form needs JavaScript to prepare your request. You can <a href="https://wa.me/923477268670">discuss your cake directly on WhatsApp</a>.</p></noscript></form></div></section>
 
-            </aside>
-
-    </aside>
-
-</div>
-
-</section>
-    </main>
-    <div id="toast" class="toast"></div>
-    <div id="footer"></div>
-<!-- <script src=""></script> -->
-<script src="js/loader.js"></script>
-<script src="js/main.js"></script>
-<script src="js/order.js"></script>
+</main>
+<!-- shared:footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a class="footer-identity" href="/index.html"><img src="/assets/logo/logo.webp" alt="" width="112" height="112" loading="lazy"><span class="footer-brand">Dream Bakerz</span></a><p class="footer-description">Customized cakes and homemade bakes in B-17, Islamabad. A cake that feels like your celebration.</p>
+        <div class="social-links" aria-label="Follow Dream Bakerz">
+          <a class="social-link social-instagram" href="https://www.instagram.com/drea_mbakers20" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="instagram-ink" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#9C344C"/><stop offset=".5" stop-color="#A53D63"/><stop offset="1" stop-color="#60418C"/></linearGradient></defs><g fill="none" stroke="var(--icon-paint, currentColor)" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></g><circle cx="17.5" cy="6.5" r="1" fill="var(--icon-paint, currentColor)"/></svg><span class="social-label">Instagram</span><span class="sr-only"> (opens in a new tab)</span>
+          </a>
+          <a class="social-link social-facebook" href="https://www.facebook.com/share/19DJwkEbJT/" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="facebook-ink" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#60418C"/><stop offset="1" stop-color="#17664D"/></linearGradient></defs><path fill="var(--icon-paint, currentColor)" d="M14 22v-9h3l.5-4H14V7c0-1.16.39-2 2-2h2V1.5A24 24 0 0 0 15 1c-3 0-5 1.83-5 5v3H7v4h3v9Z"/></svg><span class="social-label">Facebook</span><span class="sr-only"> (opens in a new tab)</span>
+          </a>
+        </div>
+      </div>
+      <div><h2>Explore</h2><nav class="footer-links" aria-label="Footer navigation"><a href="/catalog.html">Our cakes</a><a href="/about.html">Our story</a><a href="/order.html">Request a custom cake</a><a href="/contact.html">Contact</a></nav></div>
+      <div><h2>Let’s talk cake</h2><address>B-17, Islamabad, Pakistan<br><a class="text-link" href="tel:+923477268670">+92 347 7268670</a></address><div class="footer-links"><a class="footer-whatsapp icon-hover" href="https://wa.me/923477268670"><svg viewBox="0 0 32 32" aria-hidden="true"><use href="/assets/icons/ui.svg#whatsapp"/></svg>Chat on WhatsApp</a></div></div>
+    </div>
+    <div class="footer-bottom"><p>© <span data-year>2026</span> Dream Bakerz. All rights reserved.</p><p>Quotations and order confirmation directly on WhatsApp.</p></div>
+  </div>
+</footer>
+<a class="whatsapp-float icon-hover" href="https://wa.me/923477268670" aria-label="Discuss your cake on WhatsApp">
+  <svg viewBox="0 0 32 32" aria-hidden="true"><use href="/assets/icons/ui.svg#whatsapp"/></svg><span class="float-label" aria-hidden="true">Let’s talk cake</span>
+</a>
+<!-- /shared:footer -->
 </body>
 </html>

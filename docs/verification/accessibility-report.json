@@ -1,0 +1,181 @@
+{
+  "date": "2026-11-11T12:15:21.659Z",
+  "runs": [
+    {
+      "page": "index",
+      "width": 390,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 390,
+      "state": "cake-dropdown-open",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 390,
+      "state": "mobile-menu-open",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "catalog",
+      "width": 390,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "catalog",
+      "width": 390,
+      "state": "mobile-menu-open",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 390,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 390,
+      "state": "custom-design/home-delivery/validation-errors",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 390,
+      "state": "mobile-menu-open",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "about",
+      "width": 390,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "about",
+      "width": 390,
+      "state": "mobile-menu-open",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "contact",
+      "width": 390,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "contact",
+      "width": 390,
+      "state": "validation-errors",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "contact",
+      "width": 390,
+      "state": "mobile-menu-open",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "404",
+      "width": 390,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "404",
+      "width": 390,
+      "state": "mobile-menu-open",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "index",
+      "width": 1440,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 1440,
+      "state": "cake-dropdown-open",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 1440,
+      "state": "social-gradient-hover",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "catalog",
+      "width": 1440,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 1440,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 1440,
+      "state": "custom-design/home-delivery/validation-errors",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "about",
+      "width": 1440,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "contact",
+      "width": 1440,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "contact",
+      "width": 1440,
+      "state": "validation-errors",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "404",
+      "width": 1440,
+      "state": "initial",
+      "violations": [],
+      "incomplete": 1
+    }
+  ],
+  "result": "PASS"
+}
