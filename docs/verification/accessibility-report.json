@@ -1,10 +1,38 @@
 {
-  "date": "2026-11-11T12:15:21.659Z",
+  "date": "2026-11-11T20:05:39.636Z",
   "runs": [
     {
       "page": "index",
       "width": 390,
       "state": "initial",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 390,
+      "state": "menu-Cupcakes",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 390,
+      "state": "menu-Brownies",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 390,
+      "state": "menu-Tea Cakes",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 390,
+      "state": "menu-Donuts",
       "violations": [],
       "incomplete": 2
     },
@@ -47,6 +75,34 @@
       "page": "order",
       "width": 390,
       "state": "custom-design/home-delivery/validation-errors",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 390,
+      "state": "quantity-order-cupcakes",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 390,
+      "state": "quantity-order-brownies",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 390,
+      "state": "quantity-order-tea-cakes",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 390,
+      "state": "quantity-order-donuts",
       "violations": [],
       "incomplete": 1
     },
@@ -116,6 +172,34 @@
     {
       "page": "index",
       "width": 1440,
+      "state": "menu-Cupcakes",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 1440,
+      "state": "menu-Brownies",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 1440,
+      "state": "menu-Tea Cakes",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 1440,
+      "state": "menu-Donuts",
+      "violations": [],
+      "incomplete": 2
+    },
+    {
+      "page": "index",
+      "width": 1440,
       "state": "cake-dropdown-open",
       "violations": [],
       "incomplete": 2
@@ -145,6 +229,34 @@
       "page": "order",
       "width": 1440,
       "state": "custom-design/home-delivery/validation-errors",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 1440,
+      "state": "quantity-order-cupcakes",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 1440,
+      "state": "quantity-order-brownies",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 1440,
+      "state": "quantity-order-tea-cakes",
+      "violations": [],
+      "incomplete": 1
+    },
+    {
+      "page": "order",
+      "width": 1440,
+      "state": "quantity-order-donuts",
       "violations": [],
       "incomplete": 1
     },

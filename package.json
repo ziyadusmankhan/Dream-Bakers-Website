@@ -8,6 +8,8 @@
     "test:browser": "node tests/browser.cjs",
     "test:static": "python tests/static.py",
     "test:interactions": "node tests/interactions.cjs",
+    "test:menu": "node --test tests/menu-data.test.mjs",
+    "test:menu-browser": "node tests/menu-browser.cjs",
     "test:accessibility": "node tests/accessibility.cjs"
   },
   "devDependencies": {

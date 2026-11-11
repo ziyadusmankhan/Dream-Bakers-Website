@@ -1,0 +1,16 @@
+{
+  "date": "2026-11-11T20:02:34.684Z",
+  "checks": [
+    "Homepage: all 23 approved names/prices, five compact categories, one visible panel and roving keyboard tabs",
+    "All 23 items preselect from menu links, filter by category, show correct units and calculate actual estimates",
+    "Category switching preserves each item/quantity, cake design, message, weight, reference, date, delivery and notes without personal-data storage",
+    "Cake WhatsApp quotation includes the corrected variety, independent design, estimate, reference reminder and delivery address",
+    "Non-cake quantity/date/address validation and complete quotation omit every irrelevant cake-only field",
+    "Gallery identities carry through without guessing the cake variety; invalid links have useful fallbacks",
+    "Homepage menu and quantity order form fit all seven requested widths; desktop/mobile screenshots saved",
+    "No-JavaScript native disclosures retain the complete 23-item menu and order links",
+    "No JavaScript or browser-console errors in the tested menu/order flows"
+  ],
+  "errors": [],
+  "result": "PASS"
+}

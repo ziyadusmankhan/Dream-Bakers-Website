@@ -34,5 +34,14 @@ input[type=radio]{width:18px;height:18px;accent-color:var(--berry);margin:0;flex
 .pricing-note{padding-block:.8rem 1.2rem}.pricing-note h3{font-family:var(--body);font-size:.95rem;font-weight:500;letter-spacing:0;margin-bottom:.5rem}
 .review-panel .button{width:100%;margin-bottom:.8rem}.review-panel>.note{text-align:center}
 .summary-footnote{margin-top:1rem;font-size:.85rem;color:var(--muted)}
+.category-options{margin-bottom:1.5rem}.category-options .choices{gap:.5rem}
+.category-options .choice{padding:.6rem .75rem}
+.item-unit-price{font-weight:500;color:var(--berry);font-size:.95rem;margin-top:.65rem}
+.quantity-input{max-width:10rem}
+.estimate-box{border-top:var(--border);padding-block:1.5rem;margin-top:1rem}
+.estimate-box h3{font:500 1rem/1.4 var(--body);letter-spacing:0;margin-bottom:.7rem}
+.estimate-box output{display:block;font:500 clamp(1.6rem,3vw,2.1rem)/1.2 var(--heading);letter-spacing:-.03em;color:var(--berry);font-variant-numeric:tabular-nums}
+.estimate-box .note{margin-top:.7rem}
+.reference-section{padding-bottom:1rem}
 @media(min-width:40rem){.field-grid{grid-template-columns:1fr 1fr}}
 @media(min-width:64rem){.consultation-layout{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:4rem}.review-panel{position:sticky;top:1.5rem}}

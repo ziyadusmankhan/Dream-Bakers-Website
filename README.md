@@ -8,7 +8,9 @@ Preview from this directory with `node tests/server.cjs`, then open <http://127.
 
 - Edit page content directly in the five HTML files.
 - Edit shared navigation/footer in `components/`, then run `node scripts/build.mjs`.
-- Cake names, categories, descriptions, images and stable IDs live in `js/products.js`. Run the same build command to refresh the static gallery, featured cards and design options. Browser filtering uses this same data.
+- Gallery design names, categories, descriptions, images and stable IDs live in `js/products.js`. They describe decoration, independently of cake variety. Run the same build command to refresh the static gallery, featured cards and design options.
+- The 23 official menu items, PKR prices, units and variations live only in `js/menu-data.js`. Both the homepage menu and the order form import it. Run `node scripts/build.mjs` after editing it to refresh the static, no-JavaScript menu and form fallback. Do not edit generated price rows or copy prices into another production file.
+- `js/menu.js` implements accessible homepage category tabs. `js/order.js` switches between cake weight/customization and non-cake quantities, remembers in-page selections and updates the base estimate. Menu item links use `?item=...`; gallery links use `?cake=...`; the two can be combined without guessing the cake variety.
 - `css/tokens.css` contains the palette, local fonts, typography, spacing and focus tokens. `base.css` defines primitives, `site.css` defines layouts and `forms.css` defines consultation controls.
 - `css/effects.css` and `js/effects.js` implement the requested photo sheen, dropdown, social/icon/menu hovers, typewriter and scroll reveals. The larger shared logos and fixed/header WhatsApp actions are documented in `docs/INTERACTIONS.md`. Run `npm run test:interactions` to verify them.
 - `js/order.js` and `js/contact.js` manage their forms; `forms.js` provides validation; `whatsapp.js` provides the phone number, message generation and navigation.
@@ -19,6 +21,8 @@ Preview from this directory with `node tests/server.cjs`, then open <http://127.
 Optional development dependencies only: run `npm install`, then `npx playwright install chromium`. Start the preview server in another terminal, then run `npm run test:browser` and `npm run test:accessibility`. To use an existing Chrome installation, set `BROWSER_PATH` to its executable. The tests intercept outbound WhatsApp URLs and do not send messages. `PLAYWRIGHT_MODULE` and `AXE_MODULE` optionally select preinstalled tools.
 
 Reports and desktop/phone screenshots are in `docs/verification/`. The browser suite covers all six pages at seven widths. Automated accessibility checks supplement manual keyboard and screenshot review; they do not certify complete WCAG conformance.
+
+For menu changes, also run `npm run test:menu` and `npm run test:menu-browser`. The unit tests independently check every approved price, both corrected cake prices, quantities, weights and WhatsApp message contents. The menu browser tests cover all 23 preselected items, five categories, retained preferences, validation and no-JavaScript menu disclosures. See `docs/MENU-UPDATE.md` for this change’s source, implementation and actual verification results.
 
 Generated QA screenshots and the local client prompt are excluded from Git. JSON verification reports and the test sources are included; run the tests to regenerate screenshots locally.
 

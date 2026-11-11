@@ -10,7 +10,7 @@ const check = (name) => { report.checks.push(name); console.log('PASS',name); };
 let browser;
 
 (async () => {
-  browser = await chromium.launch({headless:true, ...(process.env.BROWSER_PATH ? {executablePath:process.env.BROWSER_PATH} : {})});
+  browser = await chromium.launch({headless:true,args:['--disable-gpu','--disable-renderer-backgrounding','--disable-background-timer-throttling','--disable-features=CalculateNativeWinOcclusion'], ...(process.env.BROWSER_PATH ? {executablePath:process.env.BROWSER_PATH} : {})});
   const context = await browser.newContext({timezoneId:'Asia/Karachi', viewport:{width:1440,height:1000}});
   const page = await context.newPage();
   page.on('pageerror', error => report.errors.push(error.message));
@@ -94,7 +94,7 @@ let browser;
   assert.deepEqual(names,[...names].sort((a,b)=>a.localeCompare(b)));
   await page.locator('.cake-copy a').first().click();
   await page.waitForFunction(()=>document.querySelector('#cakeDesign').value==='6');
-  assert.equal(await page.locator('#selectedCakeTitle').textContent(),'Blue daisy cake');
+  assert.equal(await page.locator('#selectedCakeDesign').textContent(),'Design: Blue daisy cake');
   assert(await page.locator('#selectedCakeImage').isVisible());
   check('Gallery categories, search, empty/reset, valid name sorting, selected design-to-order flow');
 
@@ -105,10 +105,10 @@ let browser;
     await route.fulfill({status:200,contentType:'text/html',body:'<title>Intercepted WhatsApp navigation</title>'});
   });
   await page.locator('#whatsappOrder').click();
-  assert.equal(requests.length,0); assert.equal(await page.evaluate(()=>document.activeElement.id),'weight-1');
-  assert(await page.locator('#weight-1-error').isVisible());
+  assert.equal(requests.length,0); assert.equal(await page.evaluate(()=>document.activeElement.id),'menuItem');
+  assert(await page.locator('#menuItem-error').isVisible());
+  await page.locator('#menuItem').selectOption('cake-chocolate-fudge');
   await page.locator('#weight-2').check();
-  await page.locator('#flavor').selectOption('Chocolate');
   await page.locator('#occasion').selectOption('Birthday');
   await page.locator('#cakeMessage').fill('Happy birthday, Amna & Ali!');
   await page.locator('#notes').fill('Blue & white <script>test</script>');
@@ -123,7 +123,7 @@ let browser;
   assert.equal(requests.length,0); assert.equal(await page.evaluate(()=>document.activeElement.id),'deliveryAddress');
   await page.locator('#deliveryAddress').fill('House 12, Street 3, B-17, Islamabad');
   assert.equal(await page.locator('#summary-address').textContent(),'House 12, Street 3, B-17, Islamabad');
-  check('Required validation, first-error focus, weight/flavor/occasion, past-date block, local today allowed, live address/notes summary');
+  check('Required validation, first-error focus, menu variety/weight/occasion, past-date block, local today allowed, live address/notes summary');
 
   await page.locator('#referenceImage').setInputFiles({name:'bad.txt',mimeType:'text/plain',buffer:Buffer.from('not an image')});
   assert.match(await page.locator('#referenceError').textContent(),/JPG, PNG or WebP/);
@@ -142,17 +142,17 @@ let browser;
   assert.match(deliveryMessage,/Hello Dream Bakerz/); assert.match(deliveryMessage,/Cake Design: Blue daisy cake/);
   assert.match(deliveryMessage,/Delivery Address: House 12, Street 3, B-17, Islamabad/);
   assert.match(deliveryMessage,/Cake Message: Happy birthday, Amna & Ali!/);
-  assert.match(deliveryMessage,/attach my reference image/); assert.match(deliveryMessage,/confirmation of availability/);
+  assert.match(deliveryMessage,/attach my reference image/); assert.match(deliveryMessage,/Please confirm the final price and availability/);
   assert.match(requests[0],/^https:\/\/wa.me\/923477268670\?text=/);
   check('Reference file type/8 MB checks, preview, removal, and complete encoded WhatsApp delivery quotation');
 
   await page.goto(base+'/order.html?cake=custom'); await page.waitForFunction(()=>document.querySelector('#customDesign').required);
   await page.locator('#customDesign').fill('A green cake for graduation'); await page.locator('#weight-1').check();
-  await page.locator('#flavor').selectOption('Vanilla'); await page.locator('#occasion').selectOption('Graduation');
+  await page.locator('#menuItem').selectOption('cake-vanilla'); await page.locator('#occasion').selectOption('Graduation');
   await page.locator('#deliveryDate').fill(today); await page.locator('#delivery-pickup').check();
   await page.locator('#whatsappOrder').click(); await page.waitForURL('https://wa.me/**');
   const pickupMessage = new URL(requests[1]).searchParams.get('text');
-  assert.match(pickupMessage,/Cake Design: A green cake for graduation/); assert.match(pickupMessage,/Delivery Method: Pickup/);
+  assert.match(pickupMessage,/Special Design Requests: A green cake for graduation/); assert.match(pickupMessage,/Delivery Method: Pickup/);
   assert(!pickupMessage.includes('Delivery Address')); assert(!pickupMessage.includes('Cake Message:')); assert(!pickupMessage.includes('Reference Design:'));
   check('Custom design request and pickup message omit irrelevant/empty fields');
 

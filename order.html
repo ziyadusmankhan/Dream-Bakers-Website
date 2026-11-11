@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Request a Custom Cake | Dream Bakerz Islamabad</title>
-  <meta name="description" content="Choose a cake design, flavor, weight and date, then request a quotation from Dream Bakerz on WhatsApp. Prices and availability are confirmed by the bakery.">
+  <title>Bakery Menu & Custom Orders | Dream Bakerz Islamabad</title>
+  <meta name="description" content="Choose cakes, cupcakes, brownies, tea cakes or donuts from the Dream Bakerz menu. Get a base estimate and confirm price and availability on WhatsApp.">
   <meta name="theme-color" content="#F8F4EE">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="en_PK">
   <meta property="og:site_name" content="Dream Bakerz">
-  <meta property="og:title" content="Request a Custom Cake | Dream Bakerz Islamabad">
-  <meta property="og:description" content="Choose a cake design, flavor, weight and date, then request a quotation from Dream Bakerz on WhatsApp. Prices and availability are confirmed by the bakery.">
+  <meta property="og:title" content="Bakery Menu & Custom Orders | Dream Bakerz Islamabad">
+  <meta property="og:description" content="Choose cakes, cupcakes, brownies, tea cakes or donuts from the Dream Bakerz menu. Get a base estimate and confirm price and availability on WhatsApp.">
   <meta property="og:image" content="/assets/cakes/optimized/share.jpg">
   <meta property="og:image:alt" content="Lavender butterfly cake by Dream Bakerz">
   <meta property="og:image:width" content="1200">
@@ -50,6 +50,7 @@
         <details class="nav-dropdown" id="cakeDropdown">
           <summary aria-label="Cake options"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></summary>
           <div class="nav-submenu">
+            <a href="/index.html#menu">Menu &amp; prices</a>
             <a href="/catalog.html">View all cake designs</a>
             <a href="/order.html?cake=custom">Create your own design</a>
             <a href="/index.html#how-it-works">How customization works</a>
@@ -68,15 +69,153 @@
 </header>
 <!-- /shared:header -->
 <main id="main" tabindex="-1">
+  <section class="page-heading">
+    <div class="container">
+      <p class="eyebrow">Your bakery quotation request</p>
+      <h1>Make it yours.</h1>
+      <p class="intro">Choose from our menu, tell us the details, and see an estimated base amount. Review and send your request in WhatsApp to confirm the price and availability.</p>
+    </div>
+  </section>
+  <section class="section gallery-section">
+    <div class="container">
+      <form id="cakeForm" class="consultation-layout" action="/order.html" method="post">
+        <div class="consultation-fields">
+          <fieldset class="form-section">
+            <legend>Choose your order</legend>
+            <fieldset class="choice-group category-options">
+              <legend>Category (required)</legend>
+              <div class="choices"><!-- menu:categories --><label class="choice"><input type="radio" id="category-cakes" name="category" value="cakes" checked required><span>Cakes</span></label><label class="choice"><input type="radio" id="category-cupcakes" name="category" value="cupcakes" required><span>Cupcakes</span></label><label class="choice"><input type="radio" id="category-brownies" name="category" value="brownies" required><span>Brownies</span></label><label class="choice"><input type="radio" id="category-tea-cakes" name="category" value="tea-cakes" required><span>Tea Cakes</span></label><label class="choice"><input type="radio" id="category-donuts" name="category" value="donuts" required><span>Donuts</span></label><!-- /menu:categories --></div>
+            </fieldset>
+            <p id="itemNotice" class="note" role="status" hidden>That item isn’t in the current menu. Choose an item below to continue.</p>
+            <div class="field">
+              <label for="menuItem" id="menuItemLabel">Cake variety (required)</label>
+              <select id="menuItem" name="item" required aria-describedby="itemHelp itemUnitPrice">
+                <option value="">Choose a cake variety</option><!-- menu:options --><option value="cake-red-velvet">Red Velvet — Rs. 1,500 per pound</option><option value="cake-vanilla">Vanilla — Rs. 1,500 per pound</option><option value="cake-vanilla-caramel">Vanilla Caramel — Rs. 1,500 per pound</option><option value="cake-chocolate">Chocolate — Rs. 1,500 per pound</option><option value="cake-chocolate-fudge">Chocolate Fudge — Rs. 1,700 per pound</option><option value="cake-chocolate-alaska">Chocolate Alaska — Rs. 1,700 per pound</option><option value="cake-vanilla-alaska">Vanilla Alaska — Rs. 1,700 per pound</option><option value="cake-snickers">Snickers Cake — Rs. 1,700 per pound</option><option value="cake-full-fondant">Full Fondant Cake — Rs. 2,000 per pound</option><option value="cake-three-milk">3 Milk Cake — Rs. 1,500 per pound</option><!-- /menu:options -->
+              </select>
+              <p class="note" id="itemHelp">Choose the cake variety here. Decoration is selected separately below.</p>
+              <p class="item-unit-price" id="itemUnitPrice">Choose an item to see its base price.</p>
+            </div>
+            <fieldset class="choice-group" id="cakeWeightGroup">
+              <legend>Cake weight (required)</legend>
+              <div class="choices"><!-- menu:weights --><label class="choice"><input type="radio" id="weight-1" name="weight" value="1" required><span>1 pound</span></label><label class="choice"><input type="radio" id="weight-2" name="weight" value="2" required><span>2 pounds</span></label><label class="choice"><input type="radio" id="weight-3" name="weight" value="3" required><span>3 pounds</span></label><label class="choice"><input type="radio" id="weight-5" name="weight" value="5" required><span>5 pounds</span></label><!-- /menu:weights --></div>
+            </fieldset>
+            <div class="field" id="quantityGroup" hidden>
+              <label for="quantity">Quantity (required)</label>
+              <input type="number" class="quantity-input" id="quantity" name="quantity" min="1" step="1" inputmode="numeric" value="1" disabled aria-describedby="quantityHelp">
+              <p class="note" id="quantityHelp">Enter the number of individual items. Availability is confirmed by the bakery.</p>
+            </div>
+          </fieldset>
 
-<section class="page-heading"><div class="container"><p class="eyebrow">Your custom cake consultation</p><h1>Tell us what you have in mind.</h1><p class="intro">Choose the details below. We’ll prepare a quotation request for you to review and send in WhatsApp.</p></div></section>
-<section class="section gallery-section"><div class="container"><form id="cakeForm" class="consultation-layout" action="/order.html" method="post"><div class="consultation-fields">
-<fieldset class="form-section"><legend>Cake preferences</legend><p class="note">Start with a cake from our collection, or describe your own idea.</p><p id="designNotice" class="note" role="status" hidden>That cake design isn’t in the current collection. Choose another design or tell us about your own.</p><div class="field"><label for="cakeDesign">Cake design (required)</label><select id="cakeDesign" name="cakeDesign" required><option value="">Choose a design</option><!-- design-options --><option value="1">Butterfly fairy cake</option><option value="2">Lavender butterflies</option><option value="3">Princess Sofia cake</option><option value="4">Turquoise celebration</option><option value="5">Gold &amp; pearl birthday</option><option value="6">Blue daisy cake</option><option value="7">Pastel unicorn cake</option><!-- /design-options --><option value="custom">My own custom design</option></select></div><div class="field" id="customDesignGroup" hidden><label for="customDesign">Describe your design (required)</label><textarea id="customDesign" name="customDesign" maxlength="1000" disabled placeholder="Colors, theme, decorations or a reference you’d like to discuss."></textarea></div><fieldset class="choice-group"><legend>Cake weight (required)</legend><div class="choices"><label class="choice"><input type="radio" id="weight-1" name="weight" value="1 pound" required><span>1 pound</span></label><label class="choice"><input type="radio" id="weight-2" name="weight" value="2 pounds" required><span>2 pounds</span></label><label class="choice"><input type="radio" id="weight-3" name="weight" value="3 pounds" required><span>3 pounds</span></label><label class="choice"><input type="radio" id="weight-5" name="weight" value="5 pounds" required><span>5 pounds</span></label></div></fieldset><div class="field"><label for="flavor">Flavor (required)</label><select id="flavor" name="flavor" required><option value="">Choose a flavor</option><option>Chocolate</option><option>Vanilla</option><option>Red Velvet</option><option>Pineapple</option></select><p class="note">The bakery will confirm available options for your design.</p></div></fieldset>
-<fieldset class="form-section"><legend>Occasion & personalization</legend><div class="field"><label for="occasion">Occasion (required)</label><select id="occasion" name="occasion" required><option value="">Choose an occasion</option><option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Engagement</option><option>Baby shower</option><option>Graduation</option><option>Other celebration</option></select></div><div class="field"><label for="cakeMessage">Message on the cake (optional)</label><input type="text" id="cakeMessage" name="cakeMessage" maxlength="120" placeholder="For example: Happy Birthday, Amna"></div><div class="field"><label for="notes">Design notes (optional)</label><textarea id="notes" name="notes" rows="4" maxlength="2000" placeholder="Colors, decorations or anything else we should know."></textarea></div></fieldset>
-<fieldset class="form-section"><legend>Pickup or delivery</legend><div class="field"><label for="deliveryDate">Required date (required)</label><input id="deliveryDate" name="deliveryDate" type="date" required aria-describedby="dateHelp"><p class="note" id="dateHelp">Your date is a request. Availability is confirmed by the bakery.</p></div><fieldset class="choice-group"><legend>How would you like to receive your cake? (required)</legend><div class="choices"><label class="choice"><input type="radio" id="delivery-pickup" name="delivery" value="Pickup" required><span>Pickup</span></label><label class="choice"><input type="radio" id="delivery-home" name="delivery" value="Home delivery" required><span>Home delivery</span></label></div></fieldset><div class="field" id="addressGroup" hidden><label for="deliveryAddress">Delivery address (required)</label><textarea id="deliveryAddress" name="deliveryAddress" autocomplete="street-address" rows="3" maxlength="600" disabled aria-describedby="addressHelp"></textarea><p class="note" id="addressHelp">Please include your area. Delivery coverage and any charges will be confirmed on WhatsApp.</p></div></fieldset>
-<fieldset class="form-section"><legend>Reference design</legend><p class="note" id="referenceHelp">Optional: preview an inspiration image here. It stays in your browser. After opening WhatsApp, attach the image yourself; this form cannot send it.</p><div class="field"><label for="referenceImage">Choose an image (optional)</label><input type="file" id="referenceImage" name="referenceImage" accept="image/jpeg,image/png,image/webp" aria-describedby="referenceHelp referenceTypes referenceError"><p class="note" id="referenceTypes">JPG, PNG or WebP, up to 8 MB. You can also skip this and attach it directly in WhatsApp.</p><p class="field-error" id="referenceError" role="alert"></p><div class="preview" id="referencePreview" hidden><img id="imagePreview" alt="Your reference design preview"><p id="fileName"></p><button type="button" id="removeImage">Remove preview</button></div></div></fieldset>
-</div><aside class="review-panel" aria-labelledby="reviewHeading"><h2 id="reviewHeading">Your cake at a glance</h2><div class="selected-design" id="selectedDesign"><img id="selectedCakeImage" alt="" width="76" height="94" hidden><div><p id="selectedCakeTitle">Your cake, your way</p><p class="note">A starting point for your quotation</p></div></div><dl class="summary-list"><div class="summary-row"><dt>Weight</dt><dd id="summary-weight">Not selected</dd></div><div class="summary-row"><dt>Flavor</dt><dd id="summary-flavor">Not selected</dd></div><div class="summary-row"><dt>Occasion</dt><dd id="summary-occasion">Not selected</dd></div><div class="summary-row"><dt>Message</dt><dd id="summary-message">Not selected</dd></div><div class="summary-row"><dt>Date</dt><dd id="summary-date">Not selected</dd></div><div class="summary-row"><dt>Method</dt><dd id="summary-delivery">Not selected</dd></div><div class="summary-row" id="summary-address-row" hidden><dt>Address</dt><dd id="summary-address">Not selected</dd></div><div class="summary-row"><dt>Notes</dt><dd id="summary-notes">Not selected</dd></div><div class="summary-row"><dt>Reference</dt><dd id="summary-reference">Not selected</dd></div></dl><div class="pricing-note"><h3>A quotation made for your cake</h3><p class="note">The final price depends on the design, weight and customization. Dream Bakerz will confirm the quotation, availability and arrangements on WhatsApp.</p></div><p class="form-feedback" id="formFeedback" role="alert"></p><button class="button" id="whatsappOrder" type="submit" disabled>Get a Quote on WhatsApp</button><p class="note">Review and send your message in WhatsApp.<br>Your cake is confirmed directly with the baker.</p></aside><noscript><p class="no-script">This form needs JavaScript to prepare your request. You can <a href="https://wa.me/923477268670">discuss your cake directly on WhatsApp</a>.</p></noscript></form></div></section>
+          <fieldset class="form-section" id="cakeCustomization">
+            <legend>Cake design &amp; personalization</legend>
+            <p class="note">The variety determines the base price. The design is how your cake will look; decoration may add to the quotation.</p>
+            <p id="designNotice" class="note" role="status" hidden>That gallery design isn’t available. Choose another design or describe your own.</p>
+            <div class="field">
+              <label for="cakeDesign">Decoration / gallery design (optional)</label>
+              <select id="cakeDesign" name="cakeDesign">
+                <option value="">Discuss the design with the baker</option><!-- design-options --><option value="1">Butterfly fairy cake</option><option value="2">Lavender butterflies</option><option value="3">Princess Sofia cake</option><option value="4">Turquoise celebration</option><option value="5">Gold &amp; pearl birthday</option><option value="6">Blue daisy cake</option><option value="7">Pastel unicorn cake</option><!-- /design-options -->
+                <option value="custom">Describe my own design</option>
+              </select>
+            </div>
+            <div class="field" id="customDesignGroup" hidden>
+              <label for="customDesign">Describe your design (required)</label>
+              <textarea id="customDesign" name="customDesign" maxlength="1000" disabled placeholder="Colors, theme, decorations or a reference you’d like to discuss."></textarea>
+            </div>
+            <div class="field">
+              <label for="occasion">Occasion (required)</label>
+              <select id="occasion" name="occasion" required>
+                <option value="">Choose an occasion</option>
+                <option>Birthday</option><option>Wedding</option><option>Anniversary</option><option>Engagement</option><option>Baby shower</option><option>Graduation</option><option>Other celebration</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="cakeMessage">Message on the cake (optional)</label>
+              <input type="text" id="cakeMessage" name="cakeMessage" maxlength="120" placeholder="For example: Happy Birthday, Amna">
+            </div>
+          </fieldset>
 
+          <fieldset class="form-section reference-section" id="referenceSection">
+            <legend>Reference design</legend>
+            <p class="note" id="referenceHelp">Optional: preview an inspiration image here. It stays in your browser. After opening WhatsApp, attach the image yourself; this form cannot send it.</p>
+            <div class="field">
+              <label for="referenceImage">Choose an image (optional)</label>
+              <input type="file" id="referenceImage" name="referenceImage" accept="image/jpeg,image/png,image/webp" aria-describedby="referenceHelp referenceTypes referenceError">
+              <p class="note" id="referenceTypes">JPG, PNG or WebP, up to 8 MB. You can also attach it directly in WhatsApp.</p>
+              <p class="field-error" id="referenceError" role="alert"></p>
+              <div class="preview" id="referencePreview" hidden>
+                <img id="imagePreview" alt="Your reference design preview">
+                <p id="fileName"></p>
+                <button type="button" id="removeImage">Remove preview</button>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Special instructions</legend>
+            <div class="field">
+              <label for="notes">Notes for the bakery (optional)</label>
+              <textarea id="notes" name="notes" rows="4" maxlength="2000" placeholder="Customization requests, preferences or anything else we should know."></textarea>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-section">
+            <legend>Pickup or delivery</legend>
+            <div class="field">
+              <label for="deliveryDate">Required date (required)</label>
+              <input id="deliveryDate" name="deliveryDate" type="date" required aria-describedby="dateHelp">
+              <p class="note" id="dateHelp">Your date is a request. Availability is confirmed by the bakery.</p>
+            </div>
+            <fieldset class="choice-group">
+              <legend>How would you like to receive your order? (required)</legend>
+              <div class="choices">
+                <label class="choice"><input type="radio" id="delivery-pickup" name="delivery" value="Pickup" required><span>Pickup</span></label>
+                <label class="choice"><input type="radio" id="delivery-home" name="delivery" value="Home delivery" required><span>Home delivery</span></label>
+              </div>
+            </fieldset>
+            <div class="field" id="addressGroup" hidden>
+              <label for="deliveryAddress">Delivery address (required)</label>
+              <textarea id="deliveryAddress" name="deliveryAddress" autocomplete="street-address" rows="3" maxlength="600" disabled aria-describedby="addressHelp"></textarea>
+              <p class="note" id="addressHelp">Please include your area. Coverage and any delivery charges are confirmed on WhatsApp.</p>
+            </div>
+          </fieldset>
+        </div>
+
+        <aside class="review-panel" aria-labelledby="reviewHeading">
+          <h2 id="reviewHeading">Your request at a glance</h2>
+          <div class="selected-design" id="selectedDesign">
+            <img id="selectedCakeImage" alt="" width="76" height="94" hidden>
+            <div><p id="selectedCakeTitle">Choose a menu item</p><p class="note" id="selectedCakeDesign">Decoration and variety are chosen separately.</p></div>
+          </div>
+          <dl class="summary-list">
+            <div class="summary-row"><dt>Category</dt><dd id="summary-category">Cakes</dd></div>
+            <div class="summary-row"><dt>Unit price</dt><dd id="summary-unitPrice">Choose an item</dd></div>
+            <div class="summary-row" id="summary-weight-row"><dt>Weight</dt><dd id="summary-weight">Not selected</dd></div>
+            <div class="summary-row" id="summary-quantity-row" hidden><dt>Quantity</dt><dd id="summary-quantity">1</dd></div>
+            <div class="summary-row" id="summary-occasion-row"><dt>Occasion</dt><dd id="summary-occasion">Not selected</dd></div>
+            <div class="summary-row" id="summary-message-row"><dt>Message</dt><dd id="summary-message">None added</dd></div>
+            <div class="summary-row" id="summary-designRequests-row"><dt>Design notes</dt><dd id="summary-designRequests">None added</dd></div>
+            <div class="summary-row"><dt>Date</dt><dd id="summary-date">Not selected</dd></div>
+            <div class="summary-row"><dt>Method</dt><dd id="summary-delivery">Not selected</dd></div>
+            <div class="summary-row" id="summary-address-row" hidden><dt>Address</dt><dd id="summary-address">Not selected</dd></div>
+            <div class="summary-row"><dt>Notes</dt><dd id="summary-notes">None added</dd></div>
+            <div class="summary-row" id="summary-reference-row"><dt>Reference</dt><dd id="summary-reference">Attach in WhatsApp, if needed</dd></div>
+          </dl>
+          <div class="estimate-box">
+            <h3>Estimated Base Amount</h3>
+            <output id="estimatedBaseAmount" aria-live="polite">Choose an item and amount</output>
+            <p class="note" id="estimateCalculation">The base estimate will appear here.</p>
+          </div>
+          <div class="pricing-note">
+            <p class="note">Design and customization charges may apply. These and any delivery charges are excluded from this estimate. Dream Bakerz confirms the final price and availability on WhatsApp.</p>
+          </div>
+          <p class="form-feedback" id="formFeedback" role="alert"></p>
+          <button class="button" id="whatsappOrder" type="submit" disabled>Get a Quote on WhatsApp</button>
+          <p class="note">Review and send your message in WhatsApp.<br>Your request is confirmed directly with the bakery.</p>
+        </aside>
+        <noscript><p class="no-script">This form needs JavaScript to prepare your request. You can <a href="https://wa.me/923477268670">discuss your order directly on WhatsApp</a>.</p></noscript>
+      </form>
+    </div>
+  </section>
 </main>
 <!-- shared:footer -->
 <footer class="site-footer">
