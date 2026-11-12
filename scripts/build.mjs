@@ -2,6 +2,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { products } from '../js/products.js';
+import { menuCategories, cakeWeights, itemsInCategory, formatMoney } from '../js/menu-data.js';
 const root = new URL('../', import.meta.url);
 const escape = value => String(value).replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 function card(product) {
@@ -11,6 +12,11 @@ function card(product) {
 for (const page of ['index','catalog','order','about','contact','404']) {
   const path = new URL(`${page}.html`, root);
   let html = await readFile(path, 'utf8');
+  const menuFallback = menuCategories.map((category, index) => `<details class="menu-native" name="bakery-menu"${index === 0 ? ' open' : ''}><summary>${escape(category.name)}</summary><div class="menu-panel-heading"><h3>${escape(category.name)}</h3><p>${category.unit === 'pound' ? 'Prices per pound' : 'Prices per item'}</p></div><div class="menu-price-rows">${itemsInCategory(category.id).map(item => `<a class="menu-price-row" href="/order.html?item=${escape(item.id)}"><span>${escape(item.name)}</span><span class="menu-price">${escape(formatMoney(item.price))}</span></a>`).join('')}</div></details>`).join('\n');
+  html = html.replace(/<!-- menu:fallback -->[\s\S]*?<!-- \/menu:fallback -->/, `<!-- menu:fallback -->\n${menuFallback}\n<!-- /menu:fallback -->`);
+  html = html.replace(/<!-- menu:categories -->[\s\S]*?<!-- \/menu:categories -->/, `<!-- menu:categories -->${menuCategories.map((category, index) => `<label class="choice"><input type="radio" id="category-${category.id}" name="category" value="${category.id}"${index === 0 ? ' checked' : ''} required><span>${escape(category.name)}</span></label>`).join('')}<!-- /menu:categories -->`);
+  html = html.replace(/<!-- menu:options -->[\s\S]*?<!-- \/menu:options -->/, `<!-- menu:options -->${itemsInCategory('cakes').map(item => `<option value="${escape(item.id)}">${escape(item.name)} — ${escape(formatMoney(item.price))} per pound</option>`).join('')}<!-- /menu:options -->`);
+  html = html.replace(/<!-- menu:weights -->[\s\S]*?<!-- \/menu:weights -->/, `<!-- menu:weights -->${cakeWeights.map(weight => `<label class="choice"><input type="radio" id="weight-${weight}" name="weight" value="${weight}" required><span>${weight} ${weight === 1 ? 'pound' : 'pounds'}</span></label>`).join('')}<!-- /menu:weights -->`);
   const collections = {featured:['6','1','5'].map(id => products.find(product => product.id === id)),catalog:products};
   for (const [name, collection] of Object.entries(collections)) {
     html = html.replace(new RegExp(`<!-- cakes:${name} -->[\\s\\S]*?<!-- /cakes:${name} -->`), `<!-- cakes:${name} -->\n${collection.map(card).join('\n')}\n<!-- /cakes:${name} -->`);

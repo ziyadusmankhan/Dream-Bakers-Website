@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-11T12:14:06.436Z",
+  "date": "2026-11-11T20:07:58.775Z",
   "checks": [
     "All six pages: 320px, no overflow, one H1, unique IDs, loaded fonts/assets",
     "All six pages: 375px, no overflow, one H1, unique IDs, loaded fonts/assets",
@@ -10,7 +10,7 @@
     "All six pages: 1440px, no overflow, one H1, unique IDs, loaded fonts/assets",
     "Mobile navigation: hidden state, toggle, Tab, Escape focus return, outside click",
     "Gallery categories, search, empty/reset, valid name sorting, selected design-to-order flow",
-    "Required validation, first-error focus, weight/flavor/occasion, past-date block, local today allowed, live address/notes summary",
+    "Required validation, first-error focus, menu variety/weight/occasion, past-date block, local today allowed, live address/notes summary",
     "Reference file type/8 MB checks, preview, removal, and complete encoded WhatsApp delivery quotation",
     "Custom design request and pickup message omit irrelevant/empty fields",
     "Unknown cake fallback; contact required/email validation and WhatsApp enquiry",

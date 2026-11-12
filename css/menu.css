@@ -1,0 +1,21 @@
+/* Compact price list: real menu data, with no decorative product cards. */
+.kitchen-menu{border-block:var(--border)}
+.kitchen-menu .section-heading{margin-bottom:1.8rem}
+.menu-tabs{display:flex;flex-wrap:wrap;gap:.35rem 1rem;border-bottom:var(--border);padding-bottom:.75rem}
+.menu-tab{background:transparent;border:0;border-bottom:2px solid transparent;min-height:44px;padding:.5rem .2rem;font-weight:500;font-size:.95rem;transition:color var(--duration),border-color var(--duration)}
+.menu-tab[aria-selected=true]{color:var(--berry);border-color:var(--berry)}
+.menu-tab:hover{color:var(--berry)}
+.menu-panel{padding-top:1.5rem}
+.menu-panel-heading{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.menu-panel-heading h3{font-size:1.5rem}.menu-panel-heading p{color:var(--muted);font-size:.85rem;text-align:right}
+.menu-price-rows{display:grid;gap:0 2.5rem}
+.menu-price-row{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:1rem;min-height:52px;padding:.7rem .1rem;border-bottom:var(--border);text-decoration:none;font-size:.95rem;line-height:1.45}
+.menu-price-row:hover{color:var(--berry)}
+.menu-price{white-space:nowrap;font-weight:500;font-variant-numeric:tabular-nums}
+.menu-footer{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1.5rem;margin-top:2rem}
+.menu-footer .note{max-width:58ch}
+.menu-native{padding-block:1rem;border-top:var(--border)}
+.menu-native>summary{cursor:pointer;min-height:44px;font:500 1.25rem/1.5 var(--heading)}
+.menu-native .menu-panel-heading{margin-top:1rem}
+@media(min-width:40rem){.menu-price-rows{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:22rem){.menu-tabs{gap:.25rem .85rem}.menu-price-row{gap:.7rem}.menu-panel-heading{gap:.5rem}}

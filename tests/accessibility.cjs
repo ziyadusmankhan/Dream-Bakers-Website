@@ -7,7 +7,7 @@ const base = process.env.TEST_URL || 'http://127.0.0.1:4173';
 const report = {date:new Date().toISOString(),runs:[]};
 let browser;
 (async()=>{
-  browser=await chromium.launch({headless:true,...(process.env.BROWSER_PATH ? {executablePath:process.env.BROWSER_PATH}: {})});
+  browser=await chromium.launch({headless:true,args:['--disable-gpu','--disable-renderer-backgrounding','--disable-background-timer-throttling','--disable-features=CalculateNativeWinOcclusion'],...(process.env.BROWSER_PATH ? {executablePath:process.env.BROWSER_PATH}: {})});
   const page=await browser.newPage();
   for(const width of [390,1440]){
     await page.setViewportSize({width,height:950});
@@ -25,6 +25,11 @@ let browser;
       };
       await audit('initial');
       if(name==='index'){
+        for(const category of ['Cupcakes','Brownies','Tea Cakes','Donuts']){
+          await page.getByRole('tab',{name:category,exact:true}).click();
+          await audit(`menu-${category}`);
+        }
+        await page.getByRole('tab',{name:'Cakes',exact:true}).click();
         if(width===390) await page.locator('#menuToggle').click();
         await page.locator('#cakeDropdown summary').click();
         await page.waitForTimeout(250);
@@ -45,6 +50,13 @@ let browser;
         await page.locator('#delivery-home').check();
         await page.locator('#whatsappOrder').click();
         await audit('custom-design/home-delivery/validation-errors');
+        for(const category of ['cupcakes','brownies','tea-cakes','donuts']){
+          await page.locator(`#category-${category}`).check();
+          const first=await page.locator('#menuItem option').nth(1).getAttribute('value');
+          await page.locator('#menuItem').selectOption(first);
+          await page.locator('#quantity').fill('6');
+          await audit(`quantity-order-${category}`);
+        }
       }
       if(name==='contact'){
         await page.locator('#contactWhatsappButton').click();

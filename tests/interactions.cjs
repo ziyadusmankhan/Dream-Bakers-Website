@@ -8,7 +8,7 @@ const report={date:new Date().toISOString(),checks:[]};
 const pass=name=>{report.checks.push(name);console.log('PASS',name);};
 let browser;
 (async()=>{
- browser=await chromium.launch({headless:true,...(process.env.BROWSER_PATH?{executablePath:process.env.BROWSER_PATH}:{})});
+ browser=await chromium.launch({headless:true,args:['--disable-gpu','--disable-renderer-backgrounding','--disable-background-timer-throttling','--disable-features=CalculateNativeWinOcclusion'],...(process.env.BROWSER_PATH?{executablePath:process.env.BROWSER_PATH}:{})});
  const page=await browser.newPage();
  for(const width of [320,375,390,430,768,1024,1440]){
   await page.setViewportSize({width,height:950});
@@ -24,7 +24,7 @@ let browser;
   if(width<1024)await page.locator('#menuToggle').click();
   await page.locator('#cakeDropdown summary').click();
   assert(await page.locator('.nav-submenu').isVisible());
-  assert.equal(await page.locator('.nav-submenu a').count(),3);
+  assert.equal(await page.locator('.nav-submenu a').count(),4);
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=document.documentElement.clientWidth));
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('#cakeDropdown').getAttribute('open'),null);
