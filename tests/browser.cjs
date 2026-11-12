@@ -25,7 +25,7 @@ let browser;
       await page.goto(`${base}/${name}.html`);
       await page.evaluate(() => document.fonts.ready);
       if (name === 'catalog') await page.waitForSelector('.filter-button');
-      if (name === 'order') await page.waitForFunction(() => document.querySelector('#cakeDesign').options.length === 9);
+      if (name === 'order') await page.waitForFunction(() => document.querySelector('#cakeDesign').options.length === 24);
       const metrics = await page.evaluate(() => ({
         width:document.documentElement.clientWidth,scroll:document.documentElement.scrollWidth,
         h1:document.querySelectorAll('h1').length,
@@ -81,14 +81,15 @@ let browser;
   check('Mobile navigation: hidden state, toggle, Tab, Escape focus return, outside click');
 
   await page.goto(base+'/catalog.html'); await page.waitForSelector('.filter-button');
-  assert.equal(await page.locator('.cake-card').count(),7);
-  await page.getByRole('button',{name:'Character cakes',exact:true}).click(); assert.equal(await page.locator('.cake-card').count(),3);
+  assert.equal(await page.locator('.cake-card').count(),22);
+  await page.getByRole('button',{name:'Character cakes',exact:true}).click(); assert.equal(await page.locator('.cake-card').count(),6);
   await page.getByRole('button',{name:'Floral & butterfly cakes',exact:true}).click(); assert.equal(await page.locator('.cake-card').count(),2);
-  await page.getByRole('button',{name:'Celebration cakes',exact:true}).click(); assert.equal(await page.locator('.cake-card').count(),2);
+  await page.getByRole('button',{name:'Celebration cakes',exact:true}).click(); assert.equal(await page.locator('.cake-card').count(),11);
+  await page.getByRole('button',{name:'Theme cakes',exact:true}).click(); assert.equal(await page.locator('.cake-card').count(),3);
   await page.getByRole('button',{name:'All cakes',exact:true}).click();
-  await page.locator('#searchInput').fill('lavender'); assert.equal(await page.locator('.cake-card').count(),1);
+  await page.locator('#searchInput').fill('lavender butterflies'); assert.equal(await page.locator('.cake-card').count(),1);
   await page.locator('#searchInput').fill('no-such-cake'); assert(await page.locator('#emptyState').isVisible());
-  await page.locator('#resetFilters').click(); assert.equal(await page.locator('.cake-card').count(),7);
+  await page.locator('#resetFilters').click(); assert.equal(await page.locator('.cake-card').count(),22);
   await page.locator('#sortSelect').selectOption('name');
   const names = await page.locator('.cake-copy h3').allTextContents();
   assert.deepEqual(names,[...names].sort((a,b)=>a.localeCompare(b)));
@@ -177,7 +178,7 @@ let browser;
 
   const nojs = await browser.newContext({javaScriptEnabled:false, viewport:{width:320,height:850}});
   const plain = await nojs.newPage(); await plain.goto(base+'/catalog.html');
-  assert.equal(await plain.locator('.cake-card').count(),7); assert(await plain.locator('#siteNav').isVisible());
+  assert.equal(await plain.locator('.cake-card').count(),22); assert(await plain.locator('#siteNav').isVisible());
   assert(await plain.locator('noscript').isVisible()); await nojs.close();
   await page.emulateMedia({reducedMotion:'reduce'}); await page.goto(base+'/index.html');
   assert.equal(await page.evaluate(()=>getComputedStyle(document.documentElement).scrollBehavior),'auto');

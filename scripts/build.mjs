@@ -12,6 +12,7 @@ function card(product) {
 for (const page of ['index','catalog','order','about','contact','404']) {
   const path = new URL(`${page}.html`, root);
   let html = await readFile(path, 'utf8');
+  html = html.replace(/(<p\b[^>]*\bid="productCount"[^>]*>)[\s\S]*?(<\/p>)/, `$1${products.length} designs to make your own$2`);
   const menuFallback = menuCategories.map((category, index) => `<details class="menu-native" name="bakery-menu"${index === 0 ? ' open' : ''}><summary>${escape(category.name)}</summary><div class="menu-panel-heading"><h3>${escape(category.name)}</h3><p>${category.unit === 'pound' ? 'Prices per pound' : 'Prices per item'}</p></div><div class="menu-price-rows">${itemsInCategory(category.id).map(item => `<a class="menu-price-row" href="/order.html?item=${escape(item.id)}"><span>${escape(item.name)}</span><span class="menu-price">${escape(formatMoney(item.price))}</span></a>`).join('')}</div></details>`).join('\n');
   html = html.replace(/<!-- menu:fallback -->[\s\S]*?<!-- \/menu:fallback -->/, `<!-- menu:fallback -->\n${menuFallback}\n<!-- /menu:fallback -->`);
   html = html.replace(/<!-- menu:categories -->[\s\S]*?<!-- \/menu:categories -->/, `<!-- menu:categories -->${menuCategories.map((category, index) => `<label class="choice"><input type="radio" id="category-${category.id}" name="category" value="${category.id}"${index === 0 ? ' checked' : ''} required><span>${escape(category.name)}</span></label>`).join('')}<!-- /menu:categories -->`);

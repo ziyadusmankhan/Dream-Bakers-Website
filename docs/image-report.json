@@ -1,6 +1,6 @@
 [
   {
-    "image": "B1.jpeg",
+    "image": "birthday/B1.jpeg",
     "originalBytes": 2633110,
     "webpBytes": {
       "400": 33074,
@@ -9,7 +9,7 @@
     }
   },
   {
-    "image": "B2.jpeg",
+    "image": "birthday/B2.jpeg",
     "originalBytes": 2200389,
     "webpBytes": {
       "400": 15382,
@@ -18,7 +18,7 @@
     }
   },
   {
-    "image": "B3.jpeg",
+    "image": "birthday/B3.jpeg",
     "originalBytes": 2468966,
     "webpBytes": {
       "400": 27462,
@@ -27,7 +27,7 @@
     }
   },
   {
-    "image": "B4.jpeg",
+    "image": "birthday/B4.jpeg",
     "originalBytes": 2570270,
     "webpBytes": {
       "400": 31314,
@@ -36,7 +36,7 @@
     }
   },
   {
-    "image": "B5.jpeg",
+    "image": "birthday/B5.jpeg",
     "originalBytes": 2408580,
     "webpBytes": {
       "400": 21260,
@@ -45,7 +45,7 @@
     }
   },
   {
-    "image": "B6.jpeg",
+    "image": "birthday/B6.jpeg",
     "originalBytes": 2376361,
     "webpBytes": {
       "400": 18140,
@@ -54,12 +54,147 @@
     }
   },
   {
-    "image": "B7.jpeg",
+    "image": "birthday/B7.jpeg",
     "originalBytes": 2500539,
     "webpBytes": {
       "400": 25196,
       "640": 49792,
       "1000": 97248
+    }
+  },
+  {
+    "image": "birthday/lavender-pearl-birthday.jpg",
+    "originalBytes": 2672174,
+    "webpBytes": {
+      "400": 32354,
+      "640": 68010,
+      "1000": 143878
+    }
+  },
+  {
+    "image": "birthday/turquoise-queen.jpg",
+    "originalBytes": 2570270,
+    "webpBytes": {
+      "400": 31314,
+      "640": 62038,
+      "1000": 122464
+    }
+  },
+  {
+    "image": "occasions/baby-boy-aqiqah.jpg",
+    "originalBytes": 2530208,
+    "webpBytes": {
+      "400": 30580,
+      "640": 58428,
+      "1000": 113774
+    }
+  },
+  {
+    "image": "occasions/hajj-mubarak.jpg",
+    "originalBytes": 2604785,
+    "webpBytes": {
+      "400": 26116,
+      "640": 54478,
+      "1000": 122608
+    }
+  },
+  {
+    "image": "occasions/mango-love-you-baba.jpg",
+    "originalBytes": 2552852,
+    "webpBytes": {
+      "400": 28342,
+      "640": 54760,
+      "1000": 108540
+    }
+  },
+  {
+    "image": "occasions/pink-blue-gender-reveal.jpg",
+    "originalBytes": 2544345,
+    "webpBytes": {
+      "400": 19386,
+      "640": 38086,
+      "1000": 78112
+    }
+  },
+  {
+    "image": "occasions/pink-bride-to-be.jpg",
+    "originalBytes": 2559620,
+    "webpBytes": {
+      "400": 28584,
+      "640": 54034,
+      "1000": 99526
+    }
+  },
+  {
+    "image": "occasions/red-love-birthday.jpg",
+    "originalBytes": 2340852,
+    "webpBytes": {
+      "400": 26096,
+      "640": 50928,
+      "1000": 93746
+    }
+  },
+  {
+    "image": "occasions/school-admissions-celebration.jpg",
+    "originalBytes": 2436388,
+    "webpBytes": {
+      "400": 29594,
+      "640": 55364,
+      "1000": 110244
+    }
+  },
+  {
+    "image": "themes/pastel-unicorn-bubbles.jpg",
+    "originalBytes": 2500539,
+    "webpBytes": {
+      "400": 25196,
+      "640": 49792,
+      "1000": 97248
+    }
+  },
+  {
+    "image": "themes/pink-makeup-butterfly.jpg",
+    "originalBytes": 2712095,
+    "webpBytes": {
+      "400": 27748,
+      "640": 59210,
+      "1000": 131190
+    }
+  },
+  {
+    "image": "themes/pink-selfie-butterfly.jpg",
+    "originalBytes": 2647631,
+    "webpBytes": {
+      "400": 29490,
+      "640": 59158,
+      "1000": 128798
+    }
+  },
+  {
+    "image": "themes/princess-sofia-butterflies.jpg",
+    "originalBytes": 2468966,
+    "webpBytes": {
+      "400": 27462,
+      "640": 57882,
+      "1000": 122304
+    }
+  },
+  {
+    "image": "themes/sports-car.jpg",
+    "originalBytes": 2559336,
+    "webpBytes": {
+      "400": 33116,
+      "640": 65978,
+      "1000": 129518
+    }
+  },
+  {
+    "image": "themes/superman-party.jpg",
+    "originalBytes": 2430730,
+    "webpBytes": {
+      "400": 24328,
+      "640": 47610,
+      "1000": 87138
     }
   }
 ]

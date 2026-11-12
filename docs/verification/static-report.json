@@ -1,7 +1,7 @@
 {
   "result": "PASS",
   "pages": 6,
-  "internalReferencesChecked": 252,
+  "internalReferencesChecked": 297,
   "jsSyntax": "PASS",
   "sharedBuildIdempotent": "PASS",
   "seoActivationInIsolatedFixture": "PASS",

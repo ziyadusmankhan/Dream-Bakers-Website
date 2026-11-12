@@ -1,0 +1,17 @@
+{
+  "result": "PASS",
+  "galleryDesigns": 22,
+  "newDesigns": 15,
+  "widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "categoryFilters": "PASS",
+  "allNewSearches": "PASS",
+  "allNewOrderPreselections": "PASS",
+  "newResponsiveImageDecodes": 45,
+  "noJavaScriptGalleryAndOptions": "PASS",
+  "browserErrors": []
+}

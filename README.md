@@ -15,6 +15,7 @@ Preview from this directory with `node tests/server.cjs`, then open <http://127.
 - `css/effects.css` and `js/effects.js` implement the requested photo sheen, dropdown, social/icon/menu hovers, typewriter and scroll reveals. The larger shared logos and fixed/header WhatsApp actions are documented in `docs/INTERACTIONS.md`. Run `npm run test:interactions` to verify them.
 - `js/order.js` and `js/contact.js` manage their forms; `forms.js` provides validation; `whatsapp.js` provides the phone number, message generation and navigation.
 - Original photos remain untouched. `scripts/optimize-images.py` regenerates WebP derivatives using Pillow. Local Fraunces and Outfit Latin variable fonts include their OFL licenses.
+- The gallery includes 22 designs. Additional original JPEGs are grouped under `assets/cakes/birthday/`, `themes/` and `occasions/`, with matching collection folders in `assets/cakes/optimized/`. Run `python scripts/optimize-images.py --only-missing` to add 400, 640 and 1000 pixel WebP derivatives at the existing quality setting (86) without replacing existing assets, then run `npm run build` to refresh gallery cards and order options. Keep original photo files intact.
 
 ## Verification
 
