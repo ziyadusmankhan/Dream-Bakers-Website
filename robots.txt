@@ -3,4 +3,4 @@ Allow: /
 Disallow: /docs/
 Disallow: /scripts/
 Disallow: /tests/
-# Add the verified production sitemap using scripts/configure-seo.mjs.
+Sitemap: https://dreambakerz.com/sitemap.xml
